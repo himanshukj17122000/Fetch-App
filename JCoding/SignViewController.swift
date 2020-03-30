@@ -10,15 +10,21 @@ import UIKit
 
 class SignViewController: UIViewController {
 
-    @IBOutlet weak var ForgotPass: UIButton!
+   
+    @IBOutlet weak var signInLabel: UILabel!
+   
     @IBOutlet weak var SignUpButton: UIButton!
+    
     @IBOutlet weak var SignInButton: UIButton!
     @IBOutlet weak var secondText: UITextField!
     @IBOutlet weak var firsttext: UITextField!
     @IBOutlet weak var SecondContainer: UIView!
     @IBOutlet weak var firstContainer: UIView!
 
-    @IBOutlet weak var SignInLabel: UILabel!
+    @IBOutlet weak var forgotPw: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -29,9 +35,12 @@ class SignViewController: UIViewController {
             setupTitleLabel()
             setupFullEmail()
             setupPassword()
-            
-            
-        }
+            }
+
 
    
+    @IBAction func dismiss(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }

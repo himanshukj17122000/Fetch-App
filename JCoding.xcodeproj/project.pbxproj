@@ -19,6 +19,8 @@
 		A3388D0F243218C1005CE11A /* SignInViewController_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388D0E243218C1005CE11A /* SignInViewController_UI.swift */; };
 		A3388D1124322115005CE11A /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388D1024322115005CE11A /* SignViewController.swift */; };
 		A3388D1324322294005CE11A /* SignEmailViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388D1224322294005CE11A /* SignEmailViewController+UI.swift */; };
+		A34AE0C5243251DC00106109 /* ForgotPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34AE0C4243251DC00106109 /* ForgotPwViewController.swift */; };
+		A34AE0C72432520000106109 /* ForgotPwViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34AE0C62432520000106109 /* ForgotPwViewController+UI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		A3388D0E243218C1005CE11A /* SignInViewController_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController_UI.swift; sourceTree = "<group>"; };
 		A3388D1024322115005CE11A /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		A3388D1224322294005CE11A /* SignEmailViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignEmailViewController+UI.swift"; sourceTree = "<group>"; };
+		A34AE0C4243251DC00106109 /* ForgotPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwViewController.swift; sourceTree = "<group>"; };
+		A34AE0C62432520000106109 /* ForgotPwViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForgotPwViewController+UI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 			children = (
 				A3388D062431F960005CE11A /* Welcome.storyboard */,
 				A3388D082431FA64005CE11A /* Main.storyboard */,
+				A34AE0C4243251DC00106109 /* ForgotPwViewController.swift */,
+				A34AE0C62432520000106109 /* ForgotPwViewController+UI.swift */,
 				A3388D1024322115005CE11A /* SignViewController.swift */,
 				A3388D1224322294005CE11A /* SignEmailViewController+UI.swift */,
 				A3388CF22431F911005CE11A /* AppDelegate.swift */,
@@ -160,6 +166,8 @@
 				A3388D1324322294005CE11A /* SignEmailViewController+UI.swift in Sources */,
 				A3388D1124322115005CE11A /* SignViewController.swift in Sources */,
 				A3388D0F243218C1005CE11A /* SignInViewController_UI.swift in Sources */,
+				A34AE0C5243251DC00106109 /* ForgotPwViewController.swift in Sources */,
+				A34AE0C72432520000106109 /* ForgotPwViewController+UI.swift in Sources */,
 				A3388CF72431F911005CE11A /* ViewController.swift in Sources */,
 				A3388CF32431F911005CE11A /* AppDelegate.swift in Sources */,
 				A3388D0B24320B64005CE11A /* ViewController+UI.swift in Sources */,

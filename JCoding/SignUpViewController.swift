@@ -36,4 +36,8 @@ class SignUpViewController: UIViewController {
         
     }
 
+   
+    @IBAction func dismissView(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
