@@ -10,7 +10,7 @@ import UIKit
 
 extension ForgotPwViewController{
     func setupResetButton(){
-       resetmyPw.setTitle("RESETT MY PASSWORD", for: UIControl.State.normal)
+       resetmyPw.setTitle("RESET MY PASSWORD", for: UIControl.State.normal)
              resetmyPw.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
             resetmyPw.backgroundColor = UIColor.black
              resetmyPw.layer.cornerRadius = 5
