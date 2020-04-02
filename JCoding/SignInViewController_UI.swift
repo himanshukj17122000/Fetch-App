@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ProgressHUD
 extension SignUpViewController{
     func setupSignIn(){
              let attributedTermsText = NSMutableAttributedString(string: "Already have an account? ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor(white:0, alpha: 0.65)])
@@ -38,8 +38,19 @@ extension SignUpViewController{
     func setupAvatar(){
         avatarImage.layer.cornerRadius = 40
         avatarImage.clipsToBounds = true
+        avatarImage.isUserInteractionEnabled = true
+         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
+               avatarImage.addGestureRecognizer(tapGesture)
         
     }
+    
+    @objc func presentPicker() {
+           let picker = UIImagePickerController()
+           picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+               picker.delegate = self
+           self.present(picker, animated: true, completion: nil)
+       }
     
     func setupFullTextName(){
         firstContainer.layer.borderWidth = 1
@@ -77,5 +88,53 @@ extension SignUpViewController{
                thirdpasswordText.attributedPlaceholder = placeholderAttr
                thirdpasswordText.textColor = UIColor(red: 99/255, green: 99/255, blue: 99/255, alpha: 1)
         
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func validateFields(){
+        guard let userName = self.firstnameText.text, !userName.isEmpty else {
+            ProgressHUD.showError("Please enter an username")
+            return
+        }
+        
+        guard let email = self.secondIDText.text, !email.isEmpty else {
+            ProgressHUD.showError("Please enter an email adddress")
+            return
+        }
+        
+        guard let password = self.thirdpasswordText.text, !password.isEmpty else {
+            ProgressHUD.showError("Please enter a password")
+            return
+        }
+    }
+    
+    func signUp(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage:String) -> Void){
+        ProgressHUD.show()
+        Api.User.signUp(withUsername: self.firstnameText.text!, email: self.secondIDText.text!, password: self.thirdpasswordText.text!, image: self.image, onSuccess: {
+            ProgressHUD.dismiss()
+            onSuccess()
+        }) {(errorMessage)in
+            onError(errorMessage)
+        }
+        
+    }
+}
+
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            image = imageSelected
+            avatarImage.image = imageSelected
+        }
+        
+        if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            image = imageOriginal
+            avatarImage.image = imageOriginal
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
 }

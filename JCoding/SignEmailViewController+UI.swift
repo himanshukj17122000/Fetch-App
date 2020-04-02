@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 extension SignViewController {
     func setupSignIn(){
@@ -61,5 +62,28 @@ extension SignViewController {
                secondText.textColor = UIColor(red: 99/255, green: 99/255, blue: 99/255, alpha: 1)
         
     }
+    
+    func validateFields(){
+          guard let email = firsttext.text, !email.isEmpty else {
+               ProgressHUD.showError("Please enter an email adddress")
+               return
+           }
+           
+           guard let password = secondText.text, !password.isEmpty else {
+               ProgressHUD.showError("Please enter a password")
+               return
+           }
+       }
+    
+    
+    func signIn(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage:String) -> Void){
+           ProgressHUD.show()
+        Api.User.signIn(email: firsttext.text!, password:secondText.text!, onSuccess: {
+            ProgressHUD.dismiss()
+            onSuccess()
+        }) {(errorMessage) in onError(errorMessage)}
+        }
+           
+       }
 
-}
+

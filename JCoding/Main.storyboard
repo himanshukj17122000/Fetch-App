@@ -210,6 +210,9 @@
                                     <constraint firstAttribute="height" constant="50" id="rUq-sZ-Agg"/>
                                 </constraints>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpUser:" destination="ijP-fi-pLS" eventType="touchUpInside" id="L8X-vD-fXy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WB-yj-iw4">
                                 <rect key="frame" x="20" y="626" width="374" height="50"/>
@@ -329,6 +332,9 @@
                                     <constraint firstAttribute="height" constant="50" id="a05-JW-COS"/>
                                 </constraints>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInButtontapped:" destination="PXx-B4-0Mm" eventType="touchUpInside" id="ZY7-8G-m3K"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCe-BE-b2X">
                                 <rect key="frame" x="20" y="84" width="52" height="40"/>
@@ -428,6 +434,9 @@
                                     <constraint firstAttribute="height" constant="50" id="d3R-B1-JtB"/>
                                 </constraints>
                                 <state key="normal" title="Reset My Password"/>
+                                <connections>
+                                    <action selector="resetPassword:" destination="JW9-xz-eu2" eventType="touchUpInside" id="7l9-xT-z7l"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

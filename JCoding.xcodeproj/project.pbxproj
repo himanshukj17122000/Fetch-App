@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		793FD6E2F9395B5AF3B0E72D /* Pods_JCoding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62EB7494FE7D60D61BDEAC8 /* Pods_JCoding.framework */; };
+		A32852582435DF8100BC353F /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32852572435DF8100BC353F /* StorageService.swift */; };
 		A3388CF32431F911005CE11A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388CF22431F911005CE11A /* AppDelegate.swift */; };
 		A3388CF52431F911005CE11A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388CF42431F911005CE11A /* SceneDelegate.swift */; };
 		A3388CF72431F911005CE11A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388CF62431F911005CE11A /* ViewController.swift */; };
@@ -22,11 +23,15 @@
 		A3388D1324322294005CE11A /* SignEmailViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388D1224322294005CE11A /* SignEmailViewController+UI.swift */; };
 		A34AE0C5243251DC00106109 /* ForgotPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34AE0C4243251DC00106109 /* ForgotPwViewController.swift */; };
 		A34AE0C72432520000106109 /* ForgotPwViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34AE0C62432520000106109 /* ForgotPwViewController+UI.swift */; };
+		A369D4C62434B0D40044E2DF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369D4C52434B0D40044E2DF /* Api.swift */; };
+		A369D4C82434B1190044E2DF /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369D4C72434B1190044E2DF /* UserApi.swift */; };
 		A3914B9324334D9800D7B7AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3914B9224334D9800D7B7AE /* GoogleService-Info.plist */; };
+		A3CC52CC2435E3FE00B9E00B /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CC52CB2435E3FE00B9E00B /* Ref.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C853EC15CC113197C0D6EB6 /* Pods-JCoding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCoding.release.xcconfig"; path = "Pods/Target Support Files/Pods-JCoding/Pods-JCoding.release.xcconfig"; sourceTree = "<group>"; };
+		A32852572435DF8100BC353F /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		A3388CEF2431F911005CE11A /* JCoding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCoding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3388CF22431F911005CE11A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3388CF42431F911005CE11A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +48,10 @@
 		A3388D1224322294005CE11A /* SignEmailViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignEmailViewController+UI.swift"; sourceTree = "<group>"; };
 		A34AE0C4243251DC00106109 /* ForgotPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwViewController.swift; sourceTree = "<group>"; };
 		A34AE0C62432520000106109 /* ForgotPwViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForgotPwViewController+UI.swift"; sourceTree = "<group>"; };
+		A369D4C52434B0D40044E2DF /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		A369D4C72434B1190044E2DF /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		A3914B9224334D9800D7B7AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A3CC52CB2435E3FE00B9E00B /* Ref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
 		B6813112A3D519AF14EB1787 /* Pods-JCoding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCoding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JCoding/Pods-JCoding.debug.xcconfig"; sourceTree = "<group>"; };
 		D62EB7494FE7D60D61BDEAC8 /* Pods_JCoding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JCoding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -113,7 +121,11 @@
 				A3388D002431F911005CE11A /* Info.plist */,
 				A3388D0C24320D73005CE11A /* SignUpViewController.swift */,
 				A3388D0E243218C1005CE11A /* SignInViewController_UI.swift */,
+				A32852572435DF8100BC353F /* StorageService.swift */,
 				A3914B9224334D9800D7B7AE /* GoogleService-Info.plist */,
+				A369D4C52434B0D40044E2DF /* Api.swift */,
+				A369D4C72434B1190044E2DF /* UserApi.swift */,
+				A3CC52CB2435E3FE00B9E00B /* Ref.swift */,
 			);
 			path = JCoding;
 			sourceTree = "<group>";
@@ -198,6 +210,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-JCoding/Pods-JCoding-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -206,6 +219,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -241,13 +255,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3388D1324322294005CE11A /* SignEmailViewController+UI.swift in Sources */,
+				A3CC52CC2435E3FE00B9E00B /* Ref.swift in Sources */,
 				A3388D1124322115005CE11A /* SignViewController.swift in Sources */,
 				A3388D0F243218C1005CE11A /* SignInViewController_UI.swift in Sources */,
 				A34AE0C5243251DC00106109 /* ForgotPwViewController.swift in Sources */,
 				A34AE0C72432520000106109 /* ForgotPwViewController+UI.swift in Sources */,
+				A369D4C62434B0D40044E2DF /* Api.swift in Sources */,
 				A3388CF72431F911005CE11A /* ViewController.swift in Sources */,
+				A32852582435DF8100BC353F /* StorageService.swift in Sources */,
 				A3388CF32431F911005CE11A /* AppDelegate.swift in Sources */,
 				A3388D0B24320B64005CE11A /* ViewController+UI.swift in Sources */,
+				A369D4C82434B1190044E2DF /* UserApi.swift in Sources */,
 				A3388CF52431F911005CE11A /* SceneDelegate.swift in Sources */,
 				A3388D0D24320D73005CE11A /* SignUpViewController.swift in Sources */,
 			);
