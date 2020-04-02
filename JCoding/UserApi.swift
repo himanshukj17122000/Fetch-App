@@ -12,6 +12,28 @@ import FirebaseAuth
 import ProgressHUD
 import FirebaseStorage
 class UserApi {
+    func signIn(email: String, password: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { (authData, error) in
+            if error != nil {
+                onError(error!.localizedDescription)
+                return
+            }
+            print(authData?.user.uid)
+            onSuccess()
+        }
+    }
+    
+    func resetPassword(email: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if error == nil {
+                onSuccess()
+            } else {
+                onError(error!.localizedDescription)
+            }
+        }
+    }
+    
+    
     func signUp(withUsername userName: String, email:String, password:String, image:UIImage?, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage:String) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) {(authDataResult, error) in
             if error != nil {
@@ -36,37 +58,19 @@ class UserApi {
                          return
                      }
                 
-                let storageRef = Storage.storage().reference(forURL: "gs://jcoding-1f380.appspot.com")
-                
-                let storagerProfileRef = storageRef.child("profile").child(authData.user.uid)
+              let storageProfile = Ref().storageSpecificProfile(uid: authData.user.uid)
            
                let metadata = StorageMetadata()
                 metadata.contentType = "image/jpg"
-                storagerProfileRef.putData(imageData, metadata: metadata, completion: {(StorageMetadata, error)in
-                    if error != nil {
-                        print(error?.localizedDescription)
-                        return
-                    }
-                    
-                    storagerProfileRef.downloadURL(completion: { (url, error) in
-                    if let metaImageUrl = url?.absoluteString {
-                        dict["profileImageUrl"] = metaImageUrl
-                        
-                        Database.database().reference().child("users").child(authData.user.uid).updateChildValues(dict, withCompletionBlock: {
-                            (error, ref) in
-                            if error == nil{
-                                onSuccess()
-                            } else {
-                                onError(error!.localizedDescription)
-                            }
-                        })
-                    }
-                })
-                })
+                StorageService.savePhoto(username: userName, uid:authData.user.uid , data: imageData, metadata: metadata, storagerProfileRef: storageProfile, dict: dict, onSuccess:{
+                    onSuccess()
+                }, onError: {(errorMessage) in
+                    onError(errorMessage)
                 
-            }
+            })
             
             
         }
     }
+}
 }
