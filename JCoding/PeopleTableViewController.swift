@@ -8,16 +8,65 @@
 
 import UIKit
 
-class PeopleTableViewController: UITableViewController {
-
+class PeopleTableViewController: UITableViewController, UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if searchController.searchBar.text == nil {
+            
+            view.endEditing(true)
+        } else if  searchController.searchBar.text!.isEmpty{
+            searchResults = users
+             view.endEditing(true)
+        }
+        else{
+            let lowertextcase = searchController.searchBar.text!.lowercased()
+            filterContent(for : lowertextcase)
+        }
+        tableView.reloadData()
+    }
+    func filterContent(for searchText: String){
+        searchResults = self.users.filter{
+            return $0.username.lowercased().range(of: searchText) != nil
+        }
+    }
+    
+    var users: [User] = []
+    var searchResults: [User] = []
+    var searchController : UISearchController = UISearchController(searchResultsController: nil)
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupSearchBarController()
+        setupNavigation()
+        observeUsers()
+      
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func setupSearchBarController(){
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = true
+        searchController.searchBar.placeholder = "Search users...."
+        searchController.searchBar.barTintColor = UIColor.white
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController = searchController
+    }
+    
+    func setupNavigation(){
+        navigationItem.title = "Animals"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+    }
+    
+    func observeUsers(){
+        Api.User.observeUsers{ (user) in
+            self.users.append(user)
+            self.tableView.reloadData()
+        }
+        
     }
 
     // MARK: - Table view data source
@@ -26,16 +75,22 @@ class PeopleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+     
+            if searchController.isActive{
+                return searchResults.count
+            }
+            else {
+                searchResults.removeAll()
+        return self.users.count
+        }
+    
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
-        cell.textLabel?.text = "\(indexPath.row)"
-        cell.userName.text = "Taylor Swift"
-        cell.status.text = "Welcome to the App"
-        cell.avatar.image = UIImage(named: "taylor_swift")
+        let user = searchController.isActive ? searchResults[indexPath.row] : users[indexPath.row]
+        cell.loadData(user)
         // Configure the cell...
 
         return cell

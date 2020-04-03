@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		793FD6E2F9395B5AF3B0E72D /* Pods_JCoding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62EB7494FE7D60D61BDEAC8 /* Pods_JCoding.framework */; };
 		A32852582435DF8100BC353F /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32852572435DF8100BC353F /* StorageService.swift */; };
+		A335D1B52437B2BC0086B683 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335D1B42437B2BC0086B683 /* User.swift */; };
+		A335D1BF2437B6E80086B683 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335D1BE2437B6E80086B683 /* Extension.swift */; };
 		A3388CF32431F911005CE11A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388CF22431F911005CE11A /* AppDelegate.swift */; };
 		A3388CF52431F911005CE11A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388CF42431F911005CE11A /* SceneDelegate.swift */; };
 		A3388CF72431F911005CE11A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388CF62431F911005CE11A /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		3C853EC15CC113197C0D6EB6 /* Pods-JCoding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCoding.release.xcconfig"; path = "Pods/Target Support Files/Pods-JCoding/Pods-JCoding.release.xcconfig"; sourceTree = "<group>"; };
 		A32852572435DF8100BC353F /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		A335D1B42437B2BC0086B683 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A335D1BE2437B6E80086B683 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		A3388CEF2431F911005CE11A /* JCoding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCoding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3388CF22431F911005CE11A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3388CF42431F911005CE11A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				A3388D062431F960005CE11A /* Welcome.storyboard */,
 				A3388D082431FA64005CE11A /* Main.storyboard */,
 				A3F9FEBB2437A1FB003F6459 /* PeopleTableViewController.swift */,
+				A335D1BE2437B6E80086B683 /* Extension.swift */,
+				A335D1B42437B2BC0086B683 /* User.swift */,
 				A3F9FEB924379907003F6459 /* MessagesTableViewController.swift */,
 				A34AE0C4243251DC00106109 /* ForgotPwViewController.swift */,
 				A34AE0C62432520000106109 /* ForgotPwViewController+UI.swift */,
@@ -221,6 +227,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -230,6 +237,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -276,7 +284,9 @@
 				A32852582435DF8100BC353F /* StorageService.swift in Sources */,
 				A3388CF32431F911005CE11A /* AppDelegate.swift in Sources */,
 				A3388D0B24320B64005CE11A /* ViewController+UI.swift in Sources */,
+				A335D1BF2437B6E80086B683 /* Extension.swift in Sources */,
 				A369D4C82434B1190044E2DF /* UserApi.swift in Sources */,
+				A335D1B52437B2BC0086B683 /* User.swift in Sources */,
 				A3388CF52431F911005CE11A /* SceneDelegate.swift in Sources */,
 				A3F9FEBE2437A45A003F6459 /* UserTableViewCell.swift in Sources */,
 				A3388D0D24320D73005CE11A /* SignUpViewController.swift in Sources */,

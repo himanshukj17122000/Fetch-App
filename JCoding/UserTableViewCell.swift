@@ -15,7 +15,14 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var userName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        avatar.layer.cornerRadius = 30
+        avatar.clipsToBounds = true
         // Initialization code
+    }
+    func loadData(_ user:User){
+        self.userName.text = user.username
+        self.status.text = user.Status
+        self.avatar.loadImage(user.profileImageUrl)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
