@@ -51,7 +51,7 @@ class SignUpViewController: UIViewController {
         self.view.endEditing(true)
         self.validateFields()
         self.signUp(onSuccess: {
-            //switch view
+            (UIApplication.shared.delegate as! AppDelegate).configureInitialContainer()
         }){(errorMessage) in
             ProgressHUD.showError(errorMessage)
         }

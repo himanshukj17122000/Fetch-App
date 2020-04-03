@@ -27,6 +27,7 @@
 		A369D4C82434B1190044E2DF /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369D4C72434B1190044E2DF /* UserApi.swift */; };
 		A3914B9324334D9800D7B7AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3914B9224334D9800D7B7AE /* GoogleService-Info.plist */; };
 		A3CC52CC2435E3FE00B9E00B /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CC52CB2435E3FE00B9E00B /* Ref.swift */; };
+		A3F9FEBA24379907003F6459 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9FEB924379907003F6459 /* MessagesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		A369D4C72434B1190044E2DF /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		A3914B9224334D9800D7B7AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3CC52CB2435E3FE00B9E00B /* Ref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
+		A3F9FEB924379907003F6459 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
 		B6813112A3D519AF14EB1787 /* Pods-JCoding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCoding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JCoding/Pods-JCoding.debug.xcconfig"; sourceTree = "<group>"; };
 		D62EB7494FE7D60D61BDEAC8 /* Pods_JCoding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JCoding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 			children = (
 				A3388D062431F960005CE11A /* Welcome.storyboard */,
 				A3388D082431FA64005CE11A /* Main.storyboard */,
+				A3F9FEB924379907003F6459 /* MessagesTableViewController.swift */,
 				A34AE0C4243251DC00106109 /* ForgotPwViewController.swift */,
 				A34AE0C62432520000106109 /* ForgotPwViewController+UI.swift */,
 				A3388D1024322115005CE11A /* SignViewController.swift */,
@@ -258,6 +261,7 @@
 				A3CC52CC2435E3FE00B9E00B /* Ref.swift in Sources */,
 				A3388D1124322115005CE11A /* SignViewController.swift in Sources */,
 				A3388D0F243218C1005CE11A /* SignInViewController_UI.swift in Sources */,
+				A3F9FEBA24379907003F6459 /* MessagesTableViewController.swift in Sources */,
 				A34AE0C5243251DC00106109 /* ForgotPwViewController.swift in Sources */,
 				A34AE0C72432520000106109 /* ForgotPwViewController+UI.swift in Sources */,
 				A369D4C62434B0D40044E2DF /* Api.swift in Sources */,
