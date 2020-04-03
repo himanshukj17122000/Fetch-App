@@ -28,6 +28,8 @@
 		A3914B9324334D9800D7B7AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3914B9224334D9800D7B7AE /* GoogleService-Info.plist */; };
 		A3CC52CC2435E3FE00B9E00B /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CC52CB2435E3FE00B9E00B /* Ref.swift */; };
 		A3F9FEBA24379907003F6459 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9FEB924379907003F6459 /* MessagesTableViewController.swift */; };
+		A3F9FEBC2437A1FB003F6459 /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9FEBB2437A1FB003F6459 /* PeopleTableViewController.swift */; };
+		A3F9FEBE2437A45A003F6459 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9FEBD2437A45A003F6459 /* UserTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		A3914B9224334D9800D7B7AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3CC52CB2435E3FE00B9E00B /* Ref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
 		A3F9FEB924379907003F6459 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
+		A3F9FEBB2437A1FB003F6459 /* PeopleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewController.swift; sourceTree = "<group>"; };
+		A3F9FEBD2437A45A003F6459 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		B6813112A3D519AF14EB1787 /* Pods-JCoding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCoding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JCoding/Pods-JCoding.debug.xcconfig"; sourceTree = "<group>"; };
 		D62EB7494FE7D60D61BDEAC8 /* Pods_JCoding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JCoding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,6 +114,7 @@
 			children = (
 				A3388D062431F960005CE11A /* Welcome.storyboard */,
 				A3388D082431FA64005CE11A /* Main.storyboard */,
+				A3F9FEBB2437A1FB003F6459 /* PeopleTableViewController.swift */,
 				A3F9FEB924379907003F6459 /* MessagesTableViewController.swift */,
 				A34AE0C4243251DC00106109 /* ForgotPwViewController.swift */,
 				A34AE0C62432520000106109 /* ForgotPwViewController+UI.swift */,
@@ -117,6 +122,7 @@
 				A3388D1224322294005CE11A /* SignEmailViewController+UI.swift */,
 				A3388CF22431F911005CE11A /* AppDelegate.swift */,
 				A3388CF42431F911005CE11A /* SceneDelegate.swift */,
+				A3F9FEBD2437A45A003F6459 /* UserTableViewCell.swift */,
 				A3388CF62431F911005CE11A /* ViewController.swift */,
 				A3388D0A24320B64005CE11A /* ViewController+UI.swift */,
 				A3388CFB2431F911005CE11A /* Assets.xcassets */,
@@ -263,6 +269,7 @@
 				A3388D0F243218C1005CE11A /* SignInViewController_UI.swift in Sources */,
 				A3F9FEBA24379907003F6459 /* MessagesTableViewController.swift in Sources */,
 				A34AE0C5243251DC00106109 /* ForgotPwViewController.swift in Sources */,
+				A3F9FEBC2437A1FB003F6459 /* PeopleTableViewController.swift in Sources */,
 				A34AE0C72432520000106109 /* ForgotPwViewController+UI.swift in Sources */,
 				A369D4C62434B0D40044E2DF /* Api.swift in Sources */,
 				A3388CF72431F911005CE11A /* ViewController.swift in Sources */,
@@ -271,6 +278,7 @@
 				A3388D0B24320B64005CE11A /* ViewController+UI.swift in Sources */,
 				A369D4C82434B1190044E2DF /* UserApi.swift in Sources */,
 				A3388CF52431F911005CE11A /* SceneDelegate.swift in Sources */,
+				A3F9FEBE2437A45A003F6459 /* UserTableViewCell.swift in Sources */,
 				A3388D0D24320D73005CE11A /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

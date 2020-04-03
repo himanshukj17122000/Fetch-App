@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var initialVC: UIViewController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if Auth.auth().currentUser != nil {
-            print("HELLLLO")
             initialVC = storyboard.instantiateViewController(withIdentifier: "TabVC")
         } else {
             initialVC = storyboard.instantiateViewController(withIdentifier: "MainVC")
