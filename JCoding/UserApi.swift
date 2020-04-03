@@ -33,6 +33,29 @@ class UserApi {
         }
     }
     
+    func logOut(){
+        do{
+            try Auth.auth().signOut()
+        } catch {
+            ProgressHUD.showError(error.localizedDescription)
+            return
+        }
+        (UIApplication.shared.delegate as! AppDelegate).configureInitialContainer()
+    }
+    
+    func observeUsers(onSuccess: @escaping(UserFromDB)){
+        Ref().databaseUsers.observe(.childAdded){(snapshot) in
+            if let dict = snapshot.value as? Dictionary<String,Any> {
+                if let user = User.transformUser(dict: dict){
+                    onSuccess(user)
+                }
+             
+            }
+        }
+    }
+    
+    typealias UserFromDB = (User) -> Void
+    
     
     func signUp(withUsername userName: String, email:String, password:String, image:UIImage?, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage:String) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) {(authDataResult, error) in

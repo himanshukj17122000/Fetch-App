@@ -8,16 +8,28 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        configureInitialContainer()
         return true
     }
-
+    
+    func configureInitialContainer(){
+        var initialVC: UIViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if Auth.auth().currentUser != nil {
+            initialVC = storyboard.instantiateViewController(withIdentifier: "TabVC")
+        } else {
+            initialVC = storyboard.instantiateViewController(withIdentifier: "MainVC")
+        }
+        SceneDelegate.shared?.window?.rootViewController = initialVC
+        SceneDelegate.shared?.window?.makeKeyAndVisible()
+        
+    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

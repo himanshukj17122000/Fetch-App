@@ -77,7 +77,7 @@ extension SignViewController {
     
     
     func signIn(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage:String) -> Void){
-           ProgressHUD.show()
+           ProgressHUD.show("Loading...")
         Api.User.signIn(email: firsttext.text!, password:secondText.text!, onSuccess: {
             ProgressHUD.dismiss()
             onSuccess()
