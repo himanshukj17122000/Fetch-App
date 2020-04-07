@@ -11,6 +11,8 @@
 		A32852582435DF8100BC353F /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32852572435DF8100BC353F /* StorageService.swift */; };
 		A335D1B52437B2BC0086B683 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335D1B42437B2BC0086B683 /* User.swift */; };
 		A335D1BF2437B6E80086B683 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335D1BE2437B6E80086B683 /* Extension.swift */; };
+		A336B2AC243C95C2001E586A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A336B2AB243C95C2001E586A /* ChatViewController.swift */; };
+		A336B2AE243CAB48001E586A /* MessageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A336B2AD243CAB48001E586A /* MessageApi.swift */; };
 		A3388CF32431F911005CE11A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388CF22431F911005CE11A /* AppDelegate.swift */; };
 		A3388CF52431F911005CE11A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388CF42431F911005CE11A /* SceneDelegate.swift */; };
 		A3388CF72431F911005CE11A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388CF62431F911005CE11A /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 		A32852572435DF8100BC353F /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		A335D1B42437B2BC0086B683 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A335D1BE2437B6E80086B683 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		A336B2AB243C95C2001E586A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		A336B2AD243CAB48001E586A /* MessageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageApi.swift; sourceTree = "<group>"; };
 		A3388CEF2431F911005CE11A /* JCoding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCoding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3388CF22431F911005CE11A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3388CF42431F911005CE11A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 			children = (
 				A3388D062431F960005CE11A /* Welcome.storyboard */,
 				A3388D082431FA64005CE11A /* Main.storyboard */,
+				A336B2AB243C95C2001E586A /* ChatViewController.swift */,
 				A3F9FEBB2437A1FB003F6459 /* PeopleTableViewController.swift */,
 				A335D1BE2437B6E80086B683 /* Extension.swift */,
 				A335D1B42437B2BC0086B683 /* User.swift */,
@@ -139,6 +144,7 @@
 				A32852572435DF8100BC353F /* StorageService.swift */,
 				A3914B9224334D9800D7B7AE /* GoogleService-Info.plist */,
 				A369D4C52434B0D40044E2DF /* Api.swift */,
+				A336B2AD243CAB48001E586A /* MessageApi.swift */,
 				A369D4C72434B1190044E2DF /* UserApi.swift */,
 				A3CC52CB2435E3FE00B9E00B /* Ref.swift */,
 			);
@@ -278,6 +284,7 @@
 				A3F9FEBA24379907003F6459 /* MessagesTableViewController.swift in Sources */,
 				A34AE0C5243251DC00106109 /* ForgotPwViewController.swift in Sources */,
 				A3F9FEBC2437A1FB003F6459 /* PeopleTableViewController.swift in Sources */,
+				A336B2AE243CAB48001E586A /* MessageApi.swift in Sources */,
 				A34AE0C72432520000106109 /* ForgotPwViewController+UI.swift in Sources */,
 				A369D4C62434B0D40044E2DF /* Api.swift in Sources */,
 				A3388CF72431F911005CE11A /* ViewController.swift in Sources */,
@@ -289,6 +296,7 @@
 				A335D1B52437B2BC0086B683 /* User.swift in Sources */,
 				A3388CF52431F911005CE11A /* SceneDelegate.swift in Sources */,
 				A3F9FEBE2437A45A003F6459 /* UserTableViewCell.swift in Sources */,
+				A336B2AC243C95C2001E586A /* ChatViewController.swift in Sources */,
 				A3388D0D24320D73005CE11A /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

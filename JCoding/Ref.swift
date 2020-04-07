@@ -18,6 +18,15 @@ class Ref {
     func databaseSpecificUser(uid: String) -> DatabaseReference {
         return databaseUsers.child(uid)
     }
+    var databaseMessage: DatabaseReference{
+        return databaseRoot.child("messages")
+    }
+    
+    func databaseMessageSendTo(from:String, to:String) ->
+        DatabaseReference {
+            databaseMessage.child(from).child(to)
+        }
+    
     
     var databaseUsers: DatabaseReference {
         return databaseRoot.child(REF_USER)

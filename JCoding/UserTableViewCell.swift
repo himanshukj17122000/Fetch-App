@@ -13,6 +13,8 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    
+    var user:User!
     override func awakeFromNib() {
         super.awakeFromNib()
         avatar.layer.cornerRadius = 30
@@ -20,6 +22,7 @@ class UserTableViewCell: UITableViewCell {
         // Initialization code
     }
     func loadData(_ user:User){
+        self.user = user
         self.userName.text = user.username
         self.status.text = user.Status
         self.avatar.loadImage(user.profileImageUrl)
