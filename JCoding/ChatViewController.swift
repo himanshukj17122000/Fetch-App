@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MobileCoreServices
+import AVFoundation
 class ChatViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendMessage: UIButton!
@@ -19,15 +21,29 @@ class ChatViewController: UIViewController {
     var userName : String!
     var placeHolder = UILabel()
     var otherUser : String!
+    var pickCamera = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
+        observeMessages()
+        setUpPicker()
         setupInputContainer()
         setupNavigationBar()
         setupTableView()
 
         // Do any additional setup after loading the view.
     }
-    
+    func observeMessages(){
+        Api.Message.receiveMessages(from: Api.User.currentUserId, to: otherUser){(message) in
+            print(message.id)
+        }
+        Api.Message.receiveMessages(from: otherUser, to: Api.User.currentUserId){(message) in
+                   print(message.id)
+               }
+       
+    }
+    func setUpPicker(){
+        pickCamera.delegate = self
+    }
     func setupTableView(){
         tableView.tableFooterView = UIView()
         
@@ -89,6 +105,54 @@ class ChatViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
 
+    @IBAction func mediatButtonClicked(_ sender: Any) {
+        let alert = UIAlertController(title: "PetApp", message: "Select Source", preferredStyle: UIAlertController.Style.actionSheet)
+        let camera = UIAlertAction(title: "Take a picture", style: UIAlertAction.Style.default){(_) in
+            if
+                UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
+            self.pickCamera.sourceType = .camera
+            self.present(self.pickCamera, animated: true, completion: nil)
+            
+            } else {
+                print("Unavailable")
+            }
+        }
+      
+        let library = UIAlertAction(title: "Choose an Image or a Video", style: UIAlertAction.Style.default){(_) in
+            if
+            UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+                          self.pickCamera.sourceType = .photoLibrary
+                self.pickCamera.mediaTypes = [String(kUTTypeImage), String(kUTTypeMovie)]
+                self.present(self.pickCamera, animated: true, completion: nil)
+                
+            } else {
+                print("Unavailable")
+            }
+       
+    }
+        
+         let video = UIAlertAction(title: "Take a video", style: UIAlertAction.Style.default){(_) in
+                   if
+                       UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
+                   self.pickCamera.sourceType = .camera
+                    self.pickCamera.mediaTypes = [String(kUTTypeMovie)]
+                    self.pickCamera.videoExportPreset = AVAssetExportPresetPassthrough
+                    self.pickCamera.videoMaximumDuration = 30
+                   self.present(self.pickCamera, animated: true, completion: nil)
+                   
+                   } else {
+                       print("Unavailable")
+                   }
+               }
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+        
+        alert.addAction(camera)
+        alert.addAction(library)
+        alert.addAction(cancel)
+        alert.addAction(video)
+        present(alert, animated: true, completion: nil)
+        
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
@@ -134,6 +198,49 @@ extension ChatViewController:UITextViewDelegate{
             sendMessage.setTitleColor(.lightGray, for: UIControl.State.normal)
             placeHolder.isHidden = false
         }
+    }
+}
+
+extension ChatViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let videoUrl = info[UIImagePickerController.InfoKey.mediaURL] as? URL{
+            handleVideoSelected(videoUrl)
+            
+        } else {
+            handleImageSelected(info)
+        }
+    }
+    func handleVideoSelected(_ url:URL){
+        let videoName = NSUUID().uuidString
+        //print(url)
+        StorageService.saveVideoMessage(url: url, id: videoName, onSuccess: {(anyValue) in
+                if let dict = anyValue as? [String:Any] {
+                    self.sendToFirebase(dict: dict)
+                }
+            }){(errorMessage) in
+                
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
+    
+    func handleImageSelected(_ info:[UIImagePickerController.InfoKey : Any] ){
+        var theSelectedImage : UIImage?
+        if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            theSelectedImage = imageSelected
+        }
+        
+        if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            theSelectedImage = imageOriginal
+        }
+        let imageName = NSUUID().uuidString
+        StorageService.savePhotoMessage(image: theSelectedImage, id: imageName, onSuccess: {(anyValue) in
+            if let dict = anyValue as? [String:Any] {
+                self.sendToFirebase(dict: dict)
+            }
+        }){(errorMessage) in
+            
+        }
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

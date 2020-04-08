@@ -31,6 +31,17 @@ class Ref {
     var databaseUsers: DatabaseReference {
         return databaseRoot.child(REF_USER)
     }
+    
+    var storageMessage : StorageReference{
+        return storageRoot.child("messages")
+    }
+    
+    func storageSpecificImageMessage(id:String)-> StorageReference{
+        return storageMessage.child("photo").child(id)
+    }
+    func storageSpecificVideoMessage(id:String)-> StorageReference{
+        return storageMessage.child("video").child(id)
+    }
         let storageRoot = Storage.storage().reference(forURL: URL_STORAGE_ROOT)
     
     var storageProfile: StorageReference {

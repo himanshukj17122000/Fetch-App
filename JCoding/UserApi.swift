@@ -24,7 +24,6 @@ class UserApi {
                 onError(error!.localizedDescription)
                 return
             }
-            print(authData?.user.uid)
             onSuccess()
         }
     }
