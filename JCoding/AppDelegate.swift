@@ -9,14 +9,32 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FBSDKCoreKit
+import GoogleSignIn
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         configureInitialContainer()
-        return true
-    }
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+               GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
+               
+               return true
+           }
+           
+           func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+               var handled = false
+               
+               if url.absoluteString.contains("fb") {
+                handled = ApplicationDelegate.shared.application(app, open: url, options: options)
+               } else {
+//                   handled = GIDSignIn.sharedInstance()!.handle(url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+               }
+               
+               
+               return handled
+           }
     
     func configureInitialContainer(){
         var initialVC: UIViewController
