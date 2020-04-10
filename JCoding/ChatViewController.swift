@@ -22,6 +22,7 @@ class ChatViewController: UIViewController {
     var placeHolder = UILabel()
     var otherUser : String!
     var pickCamera = UIImagePickerController()
+    var messages = [Message]()
     override func viewDidLoad() {
         super.viewDidLoad()
         observeMessages()
@@ -34,18 +35,28 @@ class ChatViewController: UIViewController {
     }
     func observeMessages(){
         Api.Message.receiveMessages(from: Api.User.currentUserId, to: otherUser){(message) in
-            print(message.id)
+            self.messages.append(message)
+            self.sortMessages()
         }
         Api.Message.receiveMessages(from: otherUser, to: Api.User.currentUserId){(message) in
-                   print(message.id)
+                   self.messages.append(message)
+            self.sortMessages()
                }
        
+    }
+    func sortMessages(){
+        messages = messages.sorted(by:  {$0.date<$1.date})
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     func setUpPicker(){
         pickCamera.delegate = self
     }
     func setupTableView(){
         tableView.tableFooterView = UIView()
+        tableView.delegate = self
+        tableView.dataSource = self
         
     }
     func setupInputContainer(){
@@ -241,6 +252,18 @@ extension ChatViewController:UIImagePickerControllerDelegate, UINavigationContro
             
         }
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ChatViewController: UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell") as! MessageTableViewCell
+        cell.configureCell(uid: Api.User.currentUserId, message: messages[indexPath.row],  image:imagePartner)
+        return cell
     }
 }
 
