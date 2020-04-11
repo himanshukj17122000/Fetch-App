@@ -22,22 +22,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHz-hU-N1j">
-                                <rect key="frame" x="20" y="165" width="374" height="50"/>
+                                <rect key="frame" x="20" y="232" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eNc-eX-fpy"/>
                                 </constraints>
                                 <state key="normal" title="Sign in with Facebook">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaM-f6-idL">
-                                <rect key="frame" x="20" y="240" width="374" height="50"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="BJ1-dH-lM3"/>
-                                </constraints>
-                                <state key="normal" title="Sign in with Google">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -72,19 +62,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaM-f6-idL">
+                                <rect key="frame" x="20" y="145" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BJ1-dH-lM3"/>
+                                </constraints>
+                                <state key="normal" title="Sign in with Google">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="xff-qW-BSH" firstAttribute="top" secondItem="TaM-f6-idL" secondAttribute="bottom" constant="25" id="0Ow-ce-cp5"/>
+                            <constraint firstItem="xff-qW-BSH" firstAttribute="top" secondItem="TaM-f6-idL" secondAttribute="bottom" constant="120" id="0Ow-ce-cp5"/>
                             <constraint firstItem="xff-qW-BSH" firstAttribute="leading" secondItem="bBt-fk-Ged" secondAttribute="leading" id="4sA-7g-CCn"/>
                             <constraint firstItem="TaM-f6-idL" firstAttribute="leading" secondItem="bBt-fk-Ged" secondAttribute="leading" constant="20" id="EsF-Li-LHU"/>
                             <constraint firstItem="bBt-fk-Ged" firstAttribute="trailing" secondItem="xff-qW-BSH" secondAttribute="trailing" id="GTy-wt-p2Z"/>
                             <constraint firstItem="bBt-fk-Ged" firstAttribute="trailing" secondItem="ghq-a8-2Ns" secondAttribute="trailing" constant="20" id="SJ3-53-vOl"/>
-                            <constraint firstItem="TaM-f6-idL" firstAttribute="top" secondItem="pHz-hU-N1j" secondAttribute="bottom" constant="25" id="TA7-SS-dgJ"/>
+                            <constraint firstItem="TaM-f6-idL" firstAttribute="top" secondItem="pHz-hU-N1j" secondAttribute="bottom" constant="-137" id="TA7-SS-dgJ"/>
                             <constraint firstItem="ghq-a8-2Ns" firstAttribute="leading" secondItem="bBt-fk-Ged" secondAttribute="leading" constant="20" id="Ycn-AT-NRS"/>
                             <constraint firstItem="gts-Qi-Apy" firstAttribute="top" secondItem="xff-qW-BSH" secondAttribute="bottom" constant="25" id="adV-dh-ICH"/>
                             <constraint firstItem="ghq-a8-2Ns" firstAttribute="top" secondItem="bBt-fk-Ged" secondAttribute="top" constant="50" id="dbG-0j-aXh"/>
-                            <constraint firstItem="pHz-hU-N1j" firstAttribute="top" secondItem="ghq-a8-2Ns" secondAttribute="bottom" constant="50" id="kE5-eN-7He"/>
+                            <constraint firstItem="pHz-hU-N1j" firstAttribute="top" secondItem="ghq-a8-2Ns" secondAttribute="bottom" constant="117" id="kE5-eN-7He"/>
                             <constraint firstItem="bBt-fk-Ged" firstAttribute="trailing" secondItem="gts-Qi-Apy" secondAttribute="trailing" constant="20" id="kp9-rz-Gd5"/>
                             <constraint firstItem="bBt-fk-Ged" firstAttribute="trailing" secondItem="TaM-f6-idL" secondAttribute="trailing" constant="20" id="lLY-0A-wc4"/>
                             <constraint firstItem="bBt-fk-Ged" firstAttribute="trailing" secondItem="pHz-hU-N1j" secondAttribute="trailing" constant="20" id="nPS-x6-a97"/>
@@ -413,14 +413,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGc-Qs-Y2L">
-                                <rect key="frame" x="20" y="44" width="31" height="30"/>
+                                <rect key="frame" x="20" y="44" width="15.5" height="22"/>
                                 <state key="normal" image="close"/>
                                 <connections>
                                     <action selector="dismiss:" destination="JW9-xz-eu2" eventType="touchUpInside" id="ZsA-zD-cTb"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8YV-hL-1x3">
-                                <rect key="frame" x="20" y="114" width="354" height="40"/>
+                                <rect key="frame" x="20" y="106" width="354" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="2BK-3N-3QY"/>
                                     <constraint firstAttribute="height" constant="40" id="EPa-vA-ZzC"/>
@@ -429,7 +429,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7g-M9-NaV">
-                                <rect key="frame" x="20" y="184" width="374" height="50"/>
+                                <rect key="frame" x="20" y="176" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="d3R-B1-JtB"/>
                                 </constraints>

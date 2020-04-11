@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//import GoogleSignIn
 class ViewController: UIViewController {
 
    
@@ -19,8 +19,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var facebookLabel: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        GoogleLabel.isHidden = true
+//          GIDSignIn.sharedInstance()?.presentingViewController = self
+//
+//          // Automatically sign in the user.
+//          GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+//
+//          // ...
+        
       setupUI()
     }
+//    @IBAction func didTapSignOut(_ sender: AnyObject) {
+//      GIDSignIn.sharedInstance().signOut()
+//    }
     
     func setupUI(){
         setupHeaderTitle()

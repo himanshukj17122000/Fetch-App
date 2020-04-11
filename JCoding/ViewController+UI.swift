@@ -22,7 +22,7 @@ extension ViewController{
   
     func setupHeaderTitle(){
         let title="Create a new account"
-        let subtitle="\n\nLorem ipsum etc etc etc"
+        let subtitle="\nWelcome to out PetApp. This App works to connect dog owners with other dog owners in order to build a community of Dog lovers"
         
         let attributedText = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font: UIFont.init(name: "Didot", size:28)!, NSAttributedString.Key.foregroundColor: UIColor.black])
         
@@ -98,8 +98,8 @@ extension ViewController{
         GoogleLabel.imageView?.contentMode = .scaleAspectFit
         GoogleLabel.tintColor = .white
         GoogleLabel.imageEdgeInsets = UIEdgeInsets(top: 12, left: -35, bottom: 12, right: 0)
-        GIDSignIn.sharedInstance()?.delegate = self as? GIDSignInDelegate
-         GoogleLabel.addTarget(self, action: #selector(googleButtonDidTap), for: UIControl.Event.touchUpInside)
+       
+        
     }
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
            ProgressHUD.showError(error!.localizedDescription)

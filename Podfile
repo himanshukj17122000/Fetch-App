@@ -14,5 +14,6 @@ target 'JCoding' do
   pod 'SDWebImage'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+  pod 'Firebase/Messaging'
   pod 'GoogleSignIn'
 end
