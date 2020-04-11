@@ -7,11 +7,22 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import ProgressHUD
+import Firebase
+import GoogleSignIn
+import FBSDKLoginKit
 
-extension ViewController{
+let UID = "uid"
+let EMAIL = "email"
+let USERNAME = "username"
+let STATUS = "status"
+
+extension ViewController: GIDSignInDelegate  {
+  
     func setupHeaderTitle(){
         let title="Create a new account"
-        let subtitle="\n\nLorem ipsum etc etc etc"
+        let subtitle="\nWelcome to out PetApp. This App works to connect dog owners with other dog owners in order to build a community of Dog lovers"
         
         let attributedText = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font: UIFont.init(name: "Didot", size:28)!, NSAttributedString.Key.foregroundColor: UIColor.black])
         
@@ -47,8 +58,35 @@ extension ViewController{
         facebookLabel.imageView?.contentMode = .scaleAspectFit
         facebookLabel.tintColor = .white
         facebookLabel.imageEdgeInsets = UIEdgeInsets(top: 12, left: -15, bottom: 12, right: 0)
+        facebookLabel.addTarget(self, action: #selector(fbButtonDidTap), for: UIControl.Event.touchUpInside)
     }
-    
+    @objc func fbButtonDidTap() {
+        let fbLoginManager = LoginManager()
+           fbLoginManager
+        fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
+               if let error = error {
+                   ProgressHUD.showError(error.localizedDescription)
+                   return
+               }
+               
+            guard let accessToken = AccessToken.current else {
+                   ProgressHUD.showError("Failed to get access token")
+                   return
+               }
+               
+               let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+               Auth.auth().signInAndRetrieveData(with: credential, completion: { (result, error) in
+                   if let error = error {
+                       ProgressHUD.showError(error.localizedDescription)
+                       return
+                   }
+                   
+                   if let authData = result {
+                   self.handleFbGoogleLogic(authData: authData)
+                   }
+               })
+           }
+       }
     func setupGoogle(){
         GoogleLabel.setTitle("Sign in with Google", for: UIControl.State.normal)
         GoogleLabel.titleLabel?.font = UIFont.systemFont(ofSize: 18)
@@ -60,8 +98,68 @@ extension ViewController{
         GoogleLabel.imageView?.contentMode = .scaleAspectFit
         GoogleLabel.tintColor = .white
         GoogleLabel.imageEdgeInsets = UIEdgeInsets(top: 12, left: -35, bottom: 12, right: 0)
+        GIDSignIn.sharedInstance()?.delegate = self
+       GoogleLabel.addTarget(self, action: #selector(googleButtonDidTap), for: UIControl.Event.touchUpInside)
+
+        
     }
+     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+                 withError error: Error!) {
+          ProgressHUD.showError(error!.localizedDescription)
+       }
+          func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+                       withError error: Error!) {
+            
+               if let error = error {
+                 if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                   
+                   print("The user has not signed in before or they have since signed out.")
+                 } else {
+                   print("\(error.localizedDescription)")
+                }}
+                guard let authentication = user.authentication else {
+                    return
+                }
+            
+                let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+                Auth.auth().signInAndRetrieveData(with: credential, completion: { (result, error) in
+                     if let error = error {
+                         ProgressHUD.showError(error.localizedDescription)
+                         return
+                     }
+                     
+                     if let authData = result {
+                     self.handleFbGoogleLogic(authData: authData)
+                     }
+                 })
+               }
+                
+             
+       
+       
+       @objc func googleButtonDidTap() {
+           GIDSignIn.sharedInstance()?.signIn()
+       }
     
+    func handleFbGoogleLogic(authData: AuthDataResult) {
+        let dict: Dictionary<String, Any> =  [
+            UID: authData.user.uid,
+            EMAIL: authData.user.email,
+            USERNAME: authData.user.displayName,
+            PROFILE_IMAGE_URL: (authData.user.photoURL == nil) ? "" : authData.user.photoURL!.absoluteString,
+            STATUS: "Welcome to JChat"
+        ]
+        Ref().databaseSpecificUser(uid: authData.user.uid).updateChildValues(dict, withCompletionBlock: { (error, ref) in
+            if error == nil {
+        
+                (UIApplication.shared.delegate as! AppDelegate).configureInitialContainer()
+                
+            } else {
+                ProgressHUD.showError(error!.localizedDescription)
+            }
+        })
+        
+    }
     func setupCreateAccount(){
         createAnAccount.setTitle("Create a new account", for: UIControl.State.normal)
         createAnAccount.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)

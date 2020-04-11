@@ -37,12 +37,17 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
         setupSearchBarController()
         setupNavigation()
         observeUsers()
+        setupTableView()
       
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    func setupTableView(){
+        tableView.tableFooterView = UIView()
+        
     }
     
     func setupSearchBarController(){
@@ -51,6 +56,7 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
         searchController.searchBar.placeholder = "Search users...."
         searchController.searchBar.barTintColor = UIColor.white
         searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
     }
@@ -98,6 +104,18 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 105
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? UserTableViewCell{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let chatVC = storyboard.instantiateViewController(identifier: "chatVC") as! ChatViewController
+            chatVC.imagePartner = cell.avatar.image
+            chatVC.userName = cell.userName.text
+            chatVC.otherUser = cell.user.uid
+            self.navigationController?.pushViewController(chatVC, animated: true)
+            
+        }
     }
     
 
