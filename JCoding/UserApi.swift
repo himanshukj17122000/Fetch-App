@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 import ProgressHUD
 import FirebaseStorage
+import GoogleSignIn
 class UserApi {
     
     var currentUserId: String{
@@ -40,7 +41,18 @@ class UserApi {
     
     func logOut(){
         do{
+            if let providerData = Auth.auth().currentUser?.providerData {
+                           let userInfo = providerData[0]
+                           
+                           switch userInfo.providerID {
+                           case "google.com":
+                               GIDSignIn.sharedInstance()?.signOut()
+                           default:
+                               break
+                           }
+                       }
             try Auth.auth().signOut()
+            
         } catch {
             ProgressHUD.showError(error.localizedDescription)
             return

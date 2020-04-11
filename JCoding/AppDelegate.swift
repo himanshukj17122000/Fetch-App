@@ -13,7 +13,7 @@ import FBSDKCoreKit
 import GoogleSignIn
 @UIApplicationMain
 
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -21,15 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         configureInitialContainer()
         
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-               GIDSignIn.sharedInstance().clientID = "302288672397-fpqi3sj9c50rm2t20hklpsq8jkbbjck4.apps.googleusercontent.com"
-               GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance()?.clientID = "302288672397-fpqi3sj9c50rm2t20hklpsq8jkbbjck4.apps.googleusercontent.com"
+            
                return true
            }
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
-              withError error: Error!) {
-      // Perform any operations when the user disconnects from app here.
-      // ...
-    }
+
            
            
           @available(iOS 9.0, *)
@@ -40,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 handled = ApplicationDelegate.shared.application(app, open: url, options: options)
                } else {
                         handled = GIDSignIn.sharedInstance().handle(url)
+                            
 
                }
                
@@ -51,25 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                      open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
       return GIDSignIn.sharedInstance().handle(url)
     }
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
-              withError error: Error!) {
-      if let error = error {
-        if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-          print("The user has not signed in before or they have since signed out.")
-        } else {
-          print("\(error.localizedDescription)")
-        }
-        return
-      }
-      // Perform any operations on signed in user here.
-      let userId = user.userID                  // For client-side use only!
-      let idToken = user.authentication.idToken // Safe to send to the server
-      let fullName = user.profile.name
-      let givenName = user.profile.givenName
-      let familyName = user.profile.familyName
-      let email = user.profile.email
-      // ...
-    }
+   
     
     func configureInitialContainer(){
         var initialVC: UIViewController

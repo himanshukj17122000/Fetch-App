@@ -18,7 +18,7 @@ let EMAIL = "email"
 let USERNAME = "username"
 let STATUS = "status"
 
-extension ViewController{
+extension ViewController: GIDSignInDelegate  {
   
     func setupHeaderTitle(){
         let title="Create a new account"
@@ -98,12 +98,44 @@ extension ViewController{
         GoogleLabel.imageView?.contentMode = .scaleAspectFit
         GoogleLabel.tintColor = .white
         GoogleLabel.imageEdgeInsets = UIEdgeInsets(top: 12, left: -35, bottom: 12, right: 0)
-       
+        GIDSignIn.sharedInstance()?.delegate = self
+       GoogleLabel.addTarget(self, action: #selector(googleButtonDidTap), for: UIControl.Event.touchUpInside)
+
         
     }
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-           ProgressHUD.showError(error!.localizedDescription)
+     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+                 withError error: Error!) {
+          ProgressHUD.showError(error!.localizedDescription)
        }
+          func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+                       withError error: Error!) {
+            
+               if let error = error {
+                 if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                   
+                   print("The user has not signed in before or they have since signed out.")
+                 } else {
+                   print("\(error.localizedDescription)")
+                }}
+                guard let authentication = user.authentication else {
+                    return
+                }
+            
+                let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+                Auth.auth().signInAndRetrieveData(with: credential, completion: { (result, error) in
+                     if let error = error {
+                         ProgressHUD.showError(error.localizedDescription)
+                         return
+                     }
+                     
+                     if let authData = result {
+                     self.handleFbGoogleLogic(authData: authData)
+                     }
+                 })
+               }
+                
+             
+       
        
        @objc func googleButtonDidTap() {
            GIDSignIn.sharedInstance()?.signIn()
