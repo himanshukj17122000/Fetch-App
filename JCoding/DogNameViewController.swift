@@ -15,6 +15,8 @@ class randomuser {
 }
 class DogNameViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var female: RoundedButton!
+    @IBOutlet weak var male: RoundedButton!
     
     @IBOutlet weak var DogBreed: UITextField!
     @IBOutlet weak var DogAge: UITextField!
@@ -23,6 +25,26 @@ class DogNameViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var genderOptions: [UIButton]!
     
+    @IBAction func femaleClicked(_ sender: Any) {
+        if female.backgroundColor == UIColor.white{
+            male.backgroundColor = UIColor.white
+            female.backgroundColor = UIColor.lightGray
+        }
+        else if female.backgroundColor == UIColor.lightGray {
+            female.backgroundColor = UIColor.white
+        }
+    }
+    
+    
+    @IBAction func maleClicked(_ sender: Any) {
+        if male.backgroundColor == UIColor.white{
+            female.backgroundColor = UIColor.white
+            male.backgroundColor = UIColor.lightGray
+        }
+        else if male.backgroundColor == UIColor.lightGray {
+            male.backgroundColor = UIColor.white
+        }
+    }
     @IBAction func buttonClicked(_ sender: Any) {
         randomuser.dogname = DogName.text!
         print(DogName.text!)
