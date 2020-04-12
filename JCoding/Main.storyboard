@@ -269,19 +269,113 @@
                                     <constraint firstAttribute="width" constant="204" id="V3w-J0-zvk"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="L7V-FQ-Vaw">
+                                <rect key="frame" x="20" y="297" width="374" height="129"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SF1-sj-RVO">
+                                        <rect key="frame" x="0.0" y="0.0" width="172" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="172" id="oa5-Qz-RNw"/>
+                                            <constraint firstAttribute="height" constant="30" id="zxM-AI-w1T"/>
+                                        </constraints>
+                                        <state key="normal" title="Select preferred gender">
+                                            <color key="titleColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handleSelection:" destination="Qbj-gn-2KC" eventType="touchUpInside" id="9eC-jN-xWI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqx-3G-865">
+                                        <rect key="frame" x="0.0" y="30" width="374" height="33"/>
+                                        <color key="backgroundColor" red="0.96699744460000003" green="0.42952188229999999" blue="0.3208857645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
+                                        <state key="normal" title="Female">
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="genderTapped:" destination="Qbj-gn-2KC" eventType="touchUpInside" id="nDH-IR-x2d"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QR-GX-Ryr">
+                                        <rect key="frame" x="0.0" y="63" width="374" height="33"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
+                                        <state key="normal" title="Male">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="genderTapped:" destination="Qbj-gn-2KC" eventType="touchUpInside" id="3lU-Hy-ofj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MF7-im-BeW">
+                                        <rect key="frame" x="0.0" y="96" width="374" height="33"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
+                                        <state key="normal" title="Both">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="genderTapped:" destination="Qbj-gn-2KC" eventType="touchUpInside" id="7bQ-bw-7Va"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="oqx-3G-865" firstAttribute="leading" secondItem="L7V-FQ-Vaw" secondAttribute="leading" id="0Ih-Mh-f9G"/>
+                                    <constraint firstAttribute="trailing" secondItem="oqx-3G-865" secondAttribute="trailing" id="5UL-wN-t9I"/>
+                                    <constraint firstItem="4QR-GX-Ryr" firstAttribute="leading" secondItem="L7V-FQ-Vaw" secondAttribute="leading" id="Gos-iF-Tz0"/>
+                                    <constraint firstAttribute="trailing" secondItem="MF7-im-BeW" secondAttribute="trailing" id="isd-SY-HzJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="4QR-GX-Ryr" secondAttribute="trailing" id="pal-zI-7FB"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJv-dT-1np">
+                                <rect key="frame" x="186" y="461" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="      mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ix-7K-uaL">
+                                <rect key="frame" x="187" y="461" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select maximum distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTs-ii-myR">
+                                <rect key="frame" x="20" y="438" width="196" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="khL-vd-JJ1">
+                                <rect key="frame" x="18" y="490" width="378" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="slider:" destination="wEy-7N-5CD" eventType="valueChanged" id="YlQ-Rp-OFO"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="2Ba-qS-EYO" firstAttribute="leading" secondItem="ERS-v4-bro" secondAttribute="leading" constant="20" id="Viu-CN-aa0"/>
                             <constraint firstItem="2Ba-qS-EYO" firstAttribute="top" secondItem="ERS-v4-bro" secondAttribute="top" id="Xhp-iM-JOK"/>
+                            <constraint firstItem="L7V-FQ-Vaw" firstAttribute="top" secondItem="ERS-v4-bro" secondAttribute="top" constant="253" id="Y1q-ms-PP8"/>
+                            <constraint firstItem="L7V-FQ-Vaw" firstAttribute="leading" secondItem="ERS-v4-bro" secondAttribute="leading" constant="20" id="gip-T5-rWF"/>
+                            <constraint firstItem="ERS-v4-bro" firstAttribute="trailing" secondItem="L7V-FQ-Vaw" secondAttribute="trailing" constant="20" id="qda-X5-WWI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ERS-v4-bro"/>
                     </view>
                     <navigationItem key="navigationItem" id="2Zw-xT-7jg"/>
+                    <connections>
+                        <outlet property="lbl" destination="UJv-dT-1np" id="g63-LU-XXL"/>
+                        <outlet property="sldr" destination="khL-vd-JJ1" id="c1x-1T-v4i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wrc-Jc-GeC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2681" y="105"/>
+            <point key="canvasLocation" x="2679.7101449275365" y="104.46428571428571"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="BHU-bu-fgC">

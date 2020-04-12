@@ -10,6 +10,13 @@ import UIKit
 
 class PrefViewController: UIViewController {
 
+    @IBOutlet weak var sldr: UISlider!
+    @IBOutlet weak var lbl: UILabel!
+    @IBAction func slider(_ sender: UISlider) {
+        let currentValue = Int(sender.value)
+        
+        lbl.text = "\(currentValue)"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
