@@ -114,10 +114,11 @@ extension SignUpViewController{
     func signUp(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage:String) -> Void){
         ProgressHUD.show("Loading...")
         Api.User.signUp(withUsername: self.firstnameText.text!, email   : self.secondIDText.text!, password: self.thirdpasswordText.text!, image: self.image, dogName:
-            randomuser.dogname!,dogAge:
-            randomuser.dogage!, dogBreed:
+            randomuser.dogname!,
+            dogAge: randomuser.dogage!, dogBreed:
             randomuser.dogbreed!, dogBio:
-            randomuser.dogbio!, onSuccess: {
+            randomuser.dogbio!, dogGender:
+            randomuser.doggender!, onSuccess: {
             ProgressHUD.dismiss()
             onSuccess()
         }) {(errorMessage)in
