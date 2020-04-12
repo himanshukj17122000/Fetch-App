@@ -7,14 +7,31 @@
 //
 
 import UIKit
+class randomuser {
+    static var dogname: String!
+    static var dogage: String!
+    static var dogbreed: String!
+    static var dogbio: String!
+}
+class DogNameViewController: UIViewController, UITextFieldDelegate {
 
-class DogNameViewController: UIViewController {
-
-   
+    
+    @IBOutlet weak var DogBreed: UITextField!
+    @IBOutlet weak var DogAge: UITextField!
+    @IBOutlet weak var DogName: UITextField!
+    @IBOutlet weak var DogBio: UITextView!
+    
     @IBOutlet var genderOptions: [UIButton]!
     
-    @IBAction func genderTapped(_ sender: UIButton) {
+    @IBAction func buttonClicked(_ sender: Any) {
+        randomuser.dogname = DogName.text!
+        print(DogName.text!)
+        print(randomuser.dogname)
+        randomuser.dogage = DogAge.text!
+        randomuser.dogbreed = DogBreed.text!
+        randomuser.dogbio = DogBio.text!
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

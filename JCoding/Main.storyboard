@@ -168,6 +168,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonClicked:" destination="Qbj-gn-2KC" eventType="touchUpInside" id="KAp-2W-Xhe"/>
                                     <segue destination="wEy-7N-5CD" kind="show" id="II3-qF-9L5"/>
                                 </connections>
                             </button>
@@ -246,6 +247,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="RgB-Iw-JaT"/>
                     <connections>
+                        <outlet property="DogAge" destination="ctb-xL-m7e" id="FgJ-OY-4Zv"/>
+                        <outlet property="DogBio" destination="cBi-s6-3Xb" id="dEq-X1-sWi"/>
+                        <outlet property="DogBreed" destination="Bgw-5w-gce" id="BtA-rD-yzd"/>
+                        <outlet property="DogName" destination="4Pu-cT-cXN" id="F33-CI-tcF"/>
                         <outletCollection property="genderOptions" destination="s6T-r5-Cix" collectionClass="NSMutableArray" id="mCc-2m-0Iq"/>
                         <outletCollection property="genderOptions" destination="ac0-ES-bOM" collectionClass="NSMutableArray" id="9T8-nT-VaJ"/>
                     </connections>
@@ -270,7 +275,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="L7V-FQ-Vaw">
-                                <rect key="frame" x="20" y="297" width="374" height="129"/>
+                                <rect key="frame" x="20" y="297" width="374" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SF1-sj-RVO">
                                         <rect key="frame" x="0.0" y="0.0" width="172" height="30"/>
@@ -285,8 +290,8 @@
                                             <action selector="handleSelection:" destination="Qbj-gn-2KC" eventType="touchUpInside" id="9eC-jN-xWI"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqx-3G-865">
-                                        <rect key="frame" x="0.0" y="30" width="374" height="33"/>
+                                    <button hidden="YES" opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqx-3G-865">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
                                         <color key="backgroundColor" red="0.96699744460000003" green="0.42952188229999999" blue="0.3208857645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
                                         <state key="normal" title="Female">
@@ -296,8 +301,8 @@
                                             <action selector="genderTapped:" destination="Qbj-gn-2KC" eventType="touchUpInside" id="nDH-IR-x2d"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QR-GX-Ryr">
-                                        <rect key="frame" x="0.0" y="63" width="374" height="33"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QR-GX-Ryr">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
                                         <state key="normal" title="Male">
@@ -307,8 +312,8 @@
                                             <action selector="genderTapped:" destination="Qbj-gn-2KC" eventType="touchUpInside" id="3lU-Hy-ofj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MF7-im-BeW">
-                                        <rect key="frame" x="0.0" y="96" width="374" height="33"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MF7-im-BeW">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
                                         <state key="normal" title="Both">
@@ -327,6 +332,14 @@
                                     <constraint firstAttribute="trailing" secondItem="4QR-GX-Ryr" secondAttribute="trailing" id="pal-zI-7FB"/>
                                 </constraints>
                             </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="khL-vd-JJ1">
+                                <rect key="frame" x="18" y="490" width="378" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="slider:" destination="wEy-7N-5CD" eventType="valueChanged" id="YlQ-Rp-OFO"/>
+                                </connections>
+                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJv-dT-1np">
                                 <rect key="frame" x="186" y="461" width="30" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -348,14 +361,21 @@
                                 <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="khL-vd-JJ1">
-                                <rect key="frame" x="18" y="490" width="378" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcZ-qC-tU9">
+                                <rect key="frame" x="2" y="744" width="414" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="32"/>
+                                <state key="normal" title="Continue" backgroundImage="background">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
-                                    <action selector="slider:" destination="wEy-7N-5CD" eventType="valueChanged" id="YlQ-Rp-OFO"/>
+                                    <segue destination="ijP-fi-pLS" kind="show" id="jwm-In-95i"/>
                                 </connections>
-                            </slider>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-dog" translatesAutoresizingMaskIntoConstraints="NO" id="XCi-ZV-tbU">
+                                <rect key="frame" x="240" y="644" width="219" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -542,11 +562,11 @@
             <objects>
                 <viewController id="PXx-B4-0Mm" customClass="SignViewController" customModule="JCoding" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0RM-Qe-WeR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJF-zb-tHH">
-                                <rect key="frame" x="20" y="120" width="374" height="50"/>
+                                <rect key="frame" x="20" y="164" width="374" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SWc-Qc-Wbf">
                                         <rect key="frame" x="20" y="5" width="354" height="40"/>
@@ -568,7 +588,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kK-A5-hXS">
-                                <rect key="frame" x="20" y="210" width="374" height="50"/>
+                                <rect key="frame" x="20" y="254" width="374" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jAj-do-qWu">
                                         <rect key="frame" x="20" y="5" width="354" height="40"/>
@@ -591,7 +611,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpO-0P-h6l">
-                                <rect key="frame" x="20" y="300" width="374" height="50"/>
+                                <rect key="frame" x="20" y="344" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="ASc-K7-I8u"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Jlp-Nq-iDB"/>
@@ -604,7 +624,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCe-BE-b2X">
-                                <rect key="frame" x="20" y="40" width="52" height="40"/>
+                                <rect key="frame" x="20" y="84" width="52" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ZkJ-Op-yxT"/>
                                 </constraints>
@@ -613,7 +633,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bs-t8-fyG">
-                                <rect key="frame" x="20" y="400" width="374" height="50"/>
+                                <rect key="frame" x="20" y="444" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="EzJ-nQ-f8g"/>
                                 </constraints>
@@ -623,7 +643,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dao-SS-PwV">
-                                <rect key="frame" x="20" y="762" width="374" height="50"/>
+                                <rect key="frame" x="20" y="816" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8gL-4L-Fuh"/>
                                 </constraints>
@@ -676,18 +696,18 @@
             <objects>
                 <viewController id="JW9-xz-eu2" customClass="ForgotPwViewController" customModule="JCoding" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jie-cM-oH0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGc-Qs-Y2L">
-                                <rect key="frame" x="20" y="0.0" width="15.5" height="22"/>
+                                <rect key="frame" x="20" y="44" width="15.5" height="22"/>
                                 <state key="normal" image="close"/>
                                 <connections>
                                     <action selector="dismiss:" destination="JW9-xz-eu2" eventType="touchUpInside" id="ZsA-zD-cTb"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8YV-hL-1x3">
-                                <rect key="frame" x="20" y="62" width="354" height="40"/>
+                                <rect key="frame" x="20" y="106" width="354" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="2BK-3N-3QY"/>
                                     <constraint firstAttribute="height" constant="40" id="EPa-vA-ZzC"/>
@@ -696,7 +716,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7g-M9-NaV">
-                                <rect key="frame" x="20" y="132" width="374" height="50"/>
+                                <rect key="frame" x="20" y="176" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="d3R-B1-JtB"/>
                                 </constraints>
