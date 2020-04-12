@@ -492,7 +492,9 @@
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="bQC-og-M3F"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Me" image="icon_profile" id="nnx-BH-Jxc"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="icon-dog" id="nnx-BH-Jxc">
+                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DyV-Vn-RKl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -833,7 +835,9 @@
         <scene sceneID="rz8-T7-xNg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9ms-S8-bUK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Messages" image="icon_messages" id="avX-x6-95i"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="icon-chat-1" id="avX-x6-95i">
+                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ctj-dE-eKv">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -848,11 +852,13 @@
             </objects>
             <point key="canvasLocation" x="366.66666666666669" y="790.84821428571422"/>
         </scene>
-        <!--Users-->
+        <!--Swipe-->
         <scene sceneID="ClP-Uw-XiN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nEW-lN-woI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Users" image="icon_users" id="Ddv-yF-MRf"/>
+                    <tabBarItem key="tabBarItem" title="Swipe" image="icon-paw" id="Ddv-yF-MRf">
+                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nvp-JU-BJw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -872,9 +878,9 @@
         <image name="attachment_icon" width="32" height="32"/>
         <image name="close" width="15.5" height="15"/>
         <image name="icon-chat" width="24" height="24"/>
-        <image name="icon_messages" width="25" height="25"/>
-        <image name="icon_profile" width="28" height="28"/>
-        <image name="icon_users" width="30" height="30"/>
+        <image name="icon-chat-1" width="40" height="40"/>
+        <image name="icon-dog" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="icon-paw" width="26.666666030883789" height="26.666666030883789"/>
         <image name="mic" width="32" height="32"/>
         <image name="play" width="25" height="25"/>
     </resources>
