@@ -62,15 +62,6 @@ class DogNameViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func handleSelection(_ sender: UIButton) {
-        genderOptions.forEach { (button) in
-            UIView.animate(withDuration: 0.3) {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-
-            }
-            
-        }
     }
 
-}
+

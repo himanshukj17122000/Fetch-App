@@ -10,14 +10,16 @@ import UIKit
 
 class ProfileTableViewController: UITableViewController {
 
+    @IBOutlet weak var dognamelbl: UITextField!
+    @IBOutlet weak var dogagelbl: UITextField!
+    @IBOutlet weak var dogbreedlbl: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        observeData()
+    
+    }
+    func observeData() {
     }
 
 }

@@ -39,7 +39,6 @@
 		F32A90DD2443C4E200480D57 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A90DC2443C4E200480D57 /* RoundedButton.swift */; };
 		F32A90E12443F4BD00480D57 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A90E02443F4BD00480D57 /* ProfileTableViewController.swift */; };
 		F32A90E32444298500480D57 /* PicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A90E22444298500480D57 /* PicViewController.swift */; };
-		F32A90E52444337D00480D57 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A90E42444337D00480D57 /* UserInfoViewController.swift */; };
 		F3A5E21724438E220079324D /* DogNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A5E21624438E220079324D /* DogNameViewController.swift */; };
 		F3A5E219244391D50079324D /* PrefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A5E218244391D50079324D /* PrefViewController.swift */; };
 /* End PBXBuildFile section */
@@ -81,7 +80,6 @@
 		F32A90DC2443C4E200480D57 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F32A90E02443F4BD00480D57 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		F32A90E22444298500480D57 /* PicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicViewController.swift; sourceTree = "<group>"; };
-		F32A90E42444337D00480D57 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		F3A5E21624438E220079324D /* DogNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogNameViewController.swift; sourceTree = "<group>"; };
 		F3A5E218244391D50079324D /* PrefViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,7 +138,6 @@
 				A3365FDD243DD6820084063A /* MessageTableViewCell.swift */,
 				A3388D082431FA64005CE11A /* Main.storyboard */,
 				F32A90E02443F4BD00480D57 /* ProfileTableViewController.swift */,
-				F32A90E42444337D00480D57 /* UserInfoViewController.swift */,
 				F32A90E22444298500480D57 /* PicViewController.swift */,
 				F32A90DC2443C4E200480D57 /* RoundedButton.swift */,
 				F3A5E218244391D50079324D /* PrefViewController.swift */,
@@ -344,7 +341,6 @@
 				A369D4C62434B0D40044E2DF /* Api.swift in Sources */,
 				A3388CF72431F911005CE11A /* ViewController.swift in Sources */,
 				A32852582435DF8100BC353F /* StorageService.swift in Sources */,
-				F32A90E52444337D00480D57 /* UserInfoViewController.swift in Sources */,
 				F32A90E12443F4BD00480D57 /* ProfileTableViewController.swift in Sources */,
 				A3388CF32431F911005CE11A /* AppDelegate.swift in Sources */,
 				A3388D0B24320B64005CE11A /* ViewController+UI.swift in Sources */,

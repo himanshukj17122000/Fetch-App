@@ -60,6 +60,7 @@ class UserApi {
         (UIApplication.shared.delegate as! AppDelegate).configureInitialContainer()
     }
     
+    
     func observeUsers(onSuccess: @escaping(UserFromDB)){
         Ref().databaseUsers.observe(.childAdded){(snapshot) in
             if let dict = snapshot.value as? Dictionary<String,Any> {
