@@ -36,6 +36,11 @@
 		A3F9FEBA24379907003F6459 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9FEB924379907003F6459 /* MessagesTableViewController.swift */; };
 		A3F9FEBC2437A1FB003F6459 /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9FEBB2437A1FB003F6459 /* PeopleTableViewController.swift */; };
 		A3F9FEBE2437A45A003F6459 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9FEBD2437A45A003F6459 /* UserTableViewCell.swift */; };
+		F32A90DD2443C4E200480D57 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A90DC2443C4E200480D57 /* RoundedButton.swift */; };
+		F32A90E12443F4BD00480D57 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A90E02443F4BD00480D57 /* ProfileTableViewController.swift */; };
+		F32A90E32444298500480D57 /* PicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A90E22444298500480D57 /* PicViewController.swift */; };
+		F3A5E21724438E220079324D /* DogNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A5E21624438E220079324D /* DogNameViewController.swift */; };
+		F3A5E219244391D50079324D /* PrefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A5E218244391D50079324D /* PrefViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +77,11 @@
 		A3F9FEBD2437A45A003F6459 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		B6813112A3D519AF14EB1787 /* Pods-JCoding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCoding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JCoding/Pods-JCoding.debug.xcconfig"; sourceTree = "<group>"; };
 		D62EB7494FE7D60D61BDEAC8 /* Pods_JCoding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JCoding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32A90DC2443C4E200480D57 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		F32A90E02443F4BD00480D57 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		F32A90E22444298500480D57 /* PicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicViewController.swift; sourceTree = "<group>"; };
+		F3A5E21624438E220079324D /* DogNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogNameViewController.swift; sourceTree = "<group>"; };
+		F3A5E218244391D50079324D /* PrefViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +137,11 @@
 				A3388D062431F960005CE11A /* Welcome.storyboard */,
 				A3365FDD243DD6820084063A /* MessageTableViewCell.swift */,
 				A3388D082431FA64005CE11A /* Main.storyboard */,
+				F32A90E02443F4BD00480D57 /* ProfileTableViewController.swift */,
+				F32A90E22444298500480D57 /* PicViewController.swift */,
+				F32A90DC2443C4E200480D57 /* RoundedButton.swift */,
+				F3A5E218244391D50079324D /* PrefViewController.swift */,
+				F3A5E21624438E220079324D /* DogNameViewController.swift */,
 				A336B2AB243C95C2001E586A /* ChatViewController.swift */,
 				A3365FDB243DCEB20084063A /* Messages.swift */,
 				A3F9FEBB2437A1FB003F6459 /* PeopleTableViewController.swift */,
@@ -320,12 +335,16 @@
 				A34AE0C5243251DC00106109 /* ForgotPwViewController.swift in Sources */,
 				A3F9FEBC2437A1FB003F6459 /* PeopleTableViewController.swift in Sources */,
 				A336B2AE243CAB48001E586A /* MessageApi.swift in Sources */,
+				F3A5E21724438E220079324D /* DogNameViewController.swift in Sources */,
 				A34AE0C72432520000106109 /* ForgotPwViewController+UI.swift in Sources */,
+				F3A5E219244391D50079324D /* PrefViewController.swift in Sources */,
 				A369D4C62434B0D40044E2DF /* Api.swift in Sources */,
 				A3388CF72431F911005CE11A /* ViewController.swift in Sources */,
 				A32852582435DF8100BC353F /* StorageService.swift in Sources */,
+				F32A90E12443F4BD00480D57 /* ProfileTableViewController.swift in Sources */,
 				A3388CF32431F911005CE11A /* AppDelegate.swift in Sources */,
 				A3388D0B24320B64005CE11A /* ViewController+UI.swift in Sources */,
+				F32A90E32444298500480D57 /* PicViewController.swift in Sources */,
 				A335D1BF2437B6E80086B683 /* Extension.swift in Sources */,
 				A369D4C82434B1190044E2DF /* UserApi.swift in Sources */,
 				A335D1B52437B2BC0086B683 /* User.swift in Sources */,
@@ -335,6 +354,7 @@
 				A3F9FEBE2437A45A003F6459 /* UserTableViewCell.swift in Sources */,
 				A336B2AC243C95C2001E586A /* ChatViewController.swift in Sources */,
 				A3388D0D24320D73005CE11A /* SignUpViewController.swift in Sources */,
+				F32A90DD2443C4E200480D57 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
