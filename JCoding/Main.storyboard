@@ -251,6 +251,15 @@
                                     <action selector="maleClicked:" destination="Qbj-gn-2KC" eventType="touchUpInside" id="z43-WC-A4G"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ev-gr-Xw7">
+                                <rect key="frame" x="20" y="34" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="Qbj-gn-2KC" eventType="touchUpInside" id="0gh-ef-ePR"/>
+                                    <action selector="dismiss:" destination="JW9-xz-eu2" eventType="touchUpInside" id="kPr-HW-xJS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -497,12 +506,13 @@
                                     <action selector="femaleClicked:" destination="Qbj-gn-2KC" eventType="touchUpInside" id="B0D-pI-Yv6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxD-5h-d7j">
-                                <rect key="frame" x="16" y="31" width="20" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBN-LV-aTt">
+                                <rect key="frame" x="20" y="44" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="arrow.left.circle" catalog="system"/>
+                                <state key="normal" image="close"/>
                                 <connections>
-                                    <action selector="backButtonTapped:" destination="wEy-7N-5CD" eventType="touchUpInside" id="WEi-cw-Z3O"/>
+                                    <action selector="dismiss:" destination="JW9-xz-eu2" eventType="touchUpInside" id="eg6-eV-GIT"/>
+                                    <action selector="dismissController:" destination="wEy-7N-5CD" eventType="touchUpInside" id="DCr-ZU-YrP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1544,7 +1554,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.left.circle" catalog="system" width="64" height="60"/>
         <image name="attachment_icon" width="32" height="32"/>
         <image name="background" width="950" height="113"/>
         <image name="button-dog" width="250" height="250"/>
