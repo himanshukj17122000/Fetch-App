@@ -38,7 +38,11 @@ class DogNameViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func dismiss(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
+   
     @IBAction func maleClicked(_ sender: Any) {
         if male.backgroundColor == UIColor.white{
             female.backgroundColor = UIColor.white

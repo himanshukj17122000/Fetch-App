@@ -31,6 +31,9 @@ class PrefViewController: UIViewController {
             PrefFemale.backgroundColor = UIColor.white
         }
     }
+    @IBAction func dismissController(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     @IBAction func PrefMaleTapped(_ sender: Any) {
         if PrefMale.backgroundColor == UIColor.white {
             PrefFemale.backgroundColor = UIColor.white
