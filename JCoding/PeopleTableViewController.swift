@@ -50,6 +50,9 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
         
     }
     
+    @IBAction func mapView(_ sender: Any) {
+        let mapVC = storyboard?.instantiateViewController(identifier: "MapView") as! MapView; self.navigationController?.pushViewController(mapVC, animated: true)
+    }
     func setupSearchBarController(){
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = true

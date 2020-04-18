@@ -31,6 +31,7 @@
 		A34AE0C72432520000106109 /* ForgotPwViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34AE0C62432520000106109 /* ForgotPwViewController+UI.swift */; };
 		A369D4C62434B0D40044E2DF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369D4C52434B0D40044E2DF /* Api.swift */; };
 		A369D4C82434B1190044E2DF /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369D4C72434B1190044E2DF /* UserApi.swift */; };
+		A389FE71244B58A5007A7DCF /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389FE70244B58A5007A7DCF /* MapView.swift */; };
 		A3914B9324334D9800D7B7AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3914B9224334D9800D7B7AE /* GoogleService-Info.plist */; };
 		A3CC52CC2435E3FE00B9E00B /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CC52CB2435E3FE00B9E00B /* Ref.swift */; };
 		A3F9FEBA24379907003F6459 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9FEB924379907003F6459 /* MessagesTableViewController.swift */; };
@@ -70,6 +71,7 @@
 		A34AE0C62432520000106109 /* ForgotPwViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForgotPwViewController+UI.swift"; sourceTree = "<group>"; };
 		A369D4C52434B0D40044E2DF /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		A369D4C72434B1190044E2DF /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
+		A389FE70244B58A5007A7DCF /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A3914B9224334D9800D7B7AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3CC52CB2435E3FE00B9E00B /* Ref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
 		A3F9FEB924379907003F6459 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				A336B2AD243CAB48001E586A /* MessageApi.swift */,
 				A369D4C72434B1190044E2DF /* UserApi.swift */,
 				A3CC52CB2435E3FE00B9E00B /* Ref.swift */,
+				A389FE70244B58A5007A7DCF /* MapView.swift */,
 			);
 			path = JCoding;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				A369D4C62434B0D40044E2DF /* Api.swift in Sources */,
 				A3388CF72431F911005CE11A /* ViewController.swift in Sources */,
 				A32852582435DF8100BC353F /* StorageService.swift in Sources */,
+				A389FE71244B58A5007A7DCF /* MapView.swift in Sources */,
 				F32A90E12443F4BD00480D57 /* ProfileTableViewController.swift in Sources */,
 				A3388CF32431F911005CE11A /* AppDelegate.swift in Sources */,
 				A3388D0B24320B64005CE11A /* ViewController+UI.swift in Sources */,

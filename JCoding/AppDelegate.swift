@@ -62,6 +62,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SceneDelegate.shared?.window?.makeKeyAndVisible()
         
     }
+    func configureMapContainer(){
+        var initialVC: UIViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        initialVC = storyboard.instantiateViewController(withIdentifier: "MapView")
+        SceneDelegate.shared?.window?.rootViewController = initialVC
+        SceneDelegate.shared?.window?.makeKeyAndVisible()
+        
+    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
