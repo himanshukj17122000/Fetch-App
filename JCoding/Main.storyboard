@@ -966,6 +966,28 @@
             </objects>
             <point key="canvasLocation" x="1276.8115942028987" y="790.84821428571422"/>
         </scene>
+        <!--Map View-->
+        <scene sceneID="iNf-PV-nPx">
+            <objects>
+                <viewController storyboardIdentifier="MapView" id="YXC-xz-VGx" customClass="MapView" customModule="JCoding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VTC-aE-gPL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="avu-1k-A1U">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="bdB-cV-xNT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="plP-eP-KXt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2YP-Ao-SYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1643.4782608695652" y="1481.9196428571429"/>
+        </scene>
         <!--Chat View Controller-->
         <scene sceneID="CQc-W6-7ey">
             <objects>
@@ -1483,7 +1505,18 @@
                             <outlet property="delegate" destination="4fw-HV-I7S" id="JXf-z8-tzE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="5pP-gf-c4S"/>
+                    <navigationItem key="navigationItem" id="5pP-gf-c4S">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="bTA-xQ-fGm">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ejT-5u-S7r">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Map"/>
+                                <connections>
+                                    <action selector="mapView:" destination="4fw-HV-I7S" eventType="touchUpInside" id="UrS-g6-YwG"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hr-9x-a79" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
