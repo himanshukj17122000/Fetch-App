@@ -118,7 +118,10 @@ extension SignUpViewController{
             dogAge: randomuser.dogage!, dogBreed:
             randomuser.dogbreed!, dogBio:
             randomuser.dogbio!, dogGender:
-            randomuser.doggender!, onSuccess: {
+            randomuser.doggender!, dogLat:
+            randomuser.doglat!, dogLong:
+            randomuser.doglong!, distance:
+            randomuser.distance!, onSuccess: {
             ProgressHUD.dismiss()
             onSuccess()
         }) {(errorMessage)in

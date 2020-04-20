@@ -61,6 +61,16 @@ class UserApi {
     }
     
     
+//    let ref = Database.database().reference()
+//           ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+//               for child in snapshot.children {
+//                   let snap = child as! DataSnapshot
+//                   let key = snap.key
+//                   let value = snap.value
+//                   if(value.distance = "50") {
+//                       self.users.append(value)
+//                   }
+//                   print("key = \(key)  value = \(value!)")
     func observeUsers(onSuccess: @escaping(UserFromDB)){
         Ref().databaseUsers.observe(.childAdded){(snapshot) in
             if let dict = snapshot.value as? Dictionary<String,Any> {
@@ -72,10 +82,20 @@ class UserApi {
         }
     }
     
+    func saveUserProfile(dict: Dictionary<String,Any>, onSuccess: @escaping() -> Void, onError: @escaping (_ errorMessage: String) -> Void) {
+        Ref().databaseSpecificUser(uid: Api.User.currentUserId).updateChildValues(dict)
+        { (error,dataRef) in
+            if error != nil {
+                onError(error!.localizedDescription)
+            }
+            onSuccess()
+        }
+    }
+    
     typealias UserFromDB = (User) -> Void
     
     
-    func signUp(withUsername userName: String, email:String, password:String, image:UIImage?, dogName: String, dogAge: String, dogBreed:String, dogBio:String, dogGender:String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage:String) -> Void) {
+    func signUp(withUsername userName: String, email:String, password:String, image:UIImage?, dogName: String, dogAge: String, dogBreed:String, dogBio:String, dogGender:String, dogLat:Double, dogLong:Double, distance:String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage:String) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) {(authDataResult, error) in
             if error != nil {
                 ProgressHUD.showError(error!.localizedDescription)
@@ -93,7 +113,10 @@ class UserApi {
                     "dogsage": dogAge,
                     "dogsbreed": dogBreed,
                     "dogsbio": dogBio,
-                    "dogsgender": dogGender
+                    "dogsgender": dogGender,
+                    "dogslat": dogLat,
+                    "dogslong": dogLong,
+                    "distance": distance
                 ]
                 guard let imageSelected = image else {
                          ProgressHUD.showError("Please choose your profile image")
