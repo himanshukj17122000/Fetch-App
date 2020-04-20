@@ -13,6 +13,9 @@ class randomuser {
     static var dogbreed: String!
     static var doggender: String!
     static var dogbio: String!
+    static var distance:String!
+    static var doglat: Double!
+    static var doglong: Double!
 }
 class DogNameViewController: UIViewController, UITextFieldDelegate {
 

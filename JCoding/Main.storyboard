@@ -311,6 +311,8 @@
                         <outlet property="DogName" destination="4Pu-cT-cXN" id="F33-CI-tcF"/>
                         <outlet property="female" destination="WLc-RU-MmD" id="U2v-fk-lGO"/>
                         <outlet property="male" destination="wzm-xH-iL3" id="tm5-Ak-DJh"/>
+                        <outletCollection property="genderOptions" destination="WLc-RU-MmD" collectionClass="NSMutableArray" id="oxc-YA-eYJ"/>
+                        <outletCollection property="genderOptions" destination="wzm-xH-iL3" collectionClass="NSMutableArray" id="ITf-Xy-Bih"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6S-HQ-Loh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -398,15 +400,15 @@
                                     <action selector="slider:" destination="wEy-7N-5CD" eventType="valueChanged" id="YlQ-Rp-OFO"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJv-dT-1np">
-                                <rect key="frame" x="186" y="461" width="30" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="      mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ix-7K-uaL">
+                                <rect key="frame" x="187" y="461" width="45" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="      mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ix-7K-uaL">
-                                <rect key="frame" x="187" y="461" width="45" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJv-dT-1np">
+                                <rect key="frame" x="186" y="461" width="30" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -427,7 +429,8 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ijP-fi-pLS" kind="show" id="jwm-In-95i"/>
+                                    <action selector="continueTapped:" destination="wEy-7N-5CD" eventType="touchUpInside" id="KeG-B9-xqO"/>
+                                    <segue destination="fwv-r0-akU" kind="show" id="KEY-Xx-JYx"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-dog" translatesAutoresizingMaskIntoConstraints="NO" id="XCi-ZV-tbU">
@@ -531,6 +534,7 @@
                         <outlet property="PrefBoth" destination="SLV-QB-KX0" id="tAL-LP-5BY"/>
                         <outlet property="PrefFemale" destination="dK8-ov-FB6" id="oFa-jN-6jj"/>
                         <outlet property="PrefMale" destination="6jS-jO-pgA" id="zhq-1c-ic6"/>
+                        <outlet property="distancelbl" destination="UJv-dT-1np" id="fJ1-kI-43r"/>
                         <outlet property="lbl" destination="UJv-dT-1np" id="g63-LU-XXL"/>
                         <outlet property="sldr" destination="khL-vd-JJ1" id="c1x-1T-v4i"/>
                     </connections>
@@ -538,6 +542,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wrc-Jc-GeC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2679.7101449275365" y="104.46428571428571"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="b1G-HH-wfw">
+            <objects>
+                <viewController id="fwv-r0-akU" customClass="LocationViewController" customModule="JCoding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yWe-sI-zEF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please enable your location so that we can serve you better." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfX-tl-GZG">
+                                <rect key="frame" x="18" y="108" width="378" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6T-2H-6Py">
+                                <rect key="frame" x="0.0" y="743" width="414" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="32"/>
+                                <state key="normal" title="Continue" backgroundImage="background">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ijP-fi-pLS" kind="show" id="JP2-7S-42q"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-dog" translatesAutoresizingMaskIntoConstraints="NO" id="kQO-l5-wBp">
+                                <rect key="frame" x="228" y="642" width="219" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4tA-GM-jTa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GUW-ZT-FiY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wac-op-6fN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3437.68115942029" y="105.80357142857143"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="BHU-bu-fgC">
@@ -697,7 +741,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1l-Xf-pCi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3442" y="98"/>
+            <point key="canvasLocation" x="4233" y="98"/>
         </scene>
         <!--Sign View Controller-->
         <scene sceneID="W3x-ta-JdC">
@@ -831,7 +875,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CIV-wP-JMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4333" y="98"/>
+            <point key="canvasLocation" x="5125" y="98"/>
         </scene>
         <!--Forgot Pw View Controller-->
         <scene sceneID="v61-tB-ddM">
@@ -891,7 +935,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BuS-uz-xaS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5252" y="131"/>
+            <point key="canvasLocation" x="6043" y="131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pho-Xf-86I">
@@ -965,28 +1009,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Zb-ZZ-pQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1276.8115942028987" y="790.84821428571422"/>
-        </scene>
-        <!--Map View-->
-        <scene sceneID="iNf-PV-nPx">
-            <objects>
-                <viewController storyboardIdentifier="MapView" id="YXC-xz-VGx" customClass="MapView" customModule="JCoding" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VTC-aE-gPL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="avu-1k-A1U">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="bdB-cV-xNT"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="plP-eP-KXt"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2YP-Ao-SYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1643.4782608695652" y="1481.9196428571429"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="CQc-W6-7ey">
@@ -1357,9 +1379,18 @@
                             <outlet property="delegate" destination="13q-la-s3r" id="ukV-tM-Gyb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="yD2-Jq-9yg"/>
+                    <navigationItem key="navigationItem" id="yD2-Jq-9yg">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="10s-wV-xVF">
+                            <connections>
+                                <action selector="savebtndidtapped:" destination="13q-la-s3r" id="KOy-M3-ZRt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="dognamelbl" destination="F6h-xG-pdi" id="W7T-j7-Ecw"/>
+                        <outlet property="dogagelbl" destination="iuT-o3-nie" id="Exy-pS-XFO"/>
+                        <outlet property="dogbreedlbl" destination="oRt-P4-caE" id="SyD-kx-HY8"/>
+                        <outlet property="dognamelbl" destination="F6h-xG-pdi" id="CTH-gl-jhw"/>
+                        <outlet property="profilePic" destination="uAs-pG-MRu" id="yOn-Tm-Vak"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgC-HI-pFg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
