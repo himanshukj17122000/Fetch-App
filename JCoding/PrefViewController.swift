@@ -14,9 +14,13 @@ class PrefViewController: UIViewController {
     
     @IBOutlet weak var PrefFemale: RoundedButton!
     
+    @IBOutlet weak var distancelbl: UILabel!
     @IBOutlet weak var PrefBoth: RoundedButton!
     @IBOutlet weak var PrefMale: RoundedButton!
     
+    @IBAction func continueTapped(_ sender: Any) {
+        randomuser.distance = distancelbl.text
+    }
     @IBAction func backButtonTapped(_ sender: Any) {
         dismiss(animated:true, completion:nil)
     }
@@ -65,6 +69,7 @@ class PrefViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class PeopleTableViewController: UITableViewController, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
@@ -72,10 +74,31 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
     
     func observeUsers(){
         Api.User.observeUsers{ (user) in
-            self.users.append(user)
-            self.tableView.reloadData()
+            let currentUserID : String = (Auth.auth().currentUser?.uid)!
+            let ref = Database.database().reference()
+            ref.child("users").child(currentUserID).queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let latt = value?["dogslat"] as? Double
+                let long = value?["dogslong"] as? Double
+                let dist = Int(value?["distance"] as! String)
+                print(latt)
+                print(long)
+                print(dist)
+                let lattdiff = (latt!-user.dogslat)*(latt!-user.dogslat)
+                let longdiff = (long!-user.dogslong)*(long!-user.dogslong)
+                if ((Int((lattdiff+longdiff).squareRoot())) < dist!) {
+                    self.users.append(user)
+                }
+                self.tableView.reloadData()
+                
+              }) { (error) in
+                print(error.localizedDescription)
+            }
+            
         }
-        
+        for user in users {
+            print(user.uid)
+        }
     }
 
     // MARK: - Table view data source
