@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func configureMapContainer(){
         var initialVC: UIViewController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        initialVC = storyboard.instantiateViewController(withIdentifier: "MapView")
+        initialVC = storyboard.instantiateViewController(withIdentifier: "mapView")
         SceneDelegate.shared?.window?.rootViewController = initialVC
         SceneDelegate.shared?.window?.makeKeyAndVisible()
         

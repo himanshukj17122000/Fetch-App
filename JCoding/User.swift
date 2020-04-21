@@ -20,7 +20,9 @@ class User{
     var distance:String
     var dogslat:Double
     var dogslong:Double
-    init(uid: String, username: String, email: String, profileImageUrl: String, status: String, dogname: String, distance: String, dogslat:Double, dogslong:Double
+    var dogsgender:String
+    var usersprefgender:String
+    init(uid: String, username: String, email: String, profileImageUrl: String, status: String, dogname: String, distance: String, dogslat:Double, dogslong:Double, dogsgender:String, usersprefgender:String
     ) {
            self.uid = uid
            self.username = username
@@ -31,6 +33,8 @@ class User{
         self.distance = distance
         self.dogslat = dogslat
         self.dogslong = dogslong
+        self.dogsgender = dogsgender
+        self.usersprefgender = usersprefgender
        }
     
     
@@ -43,13 +47,15 @@ class User{
             let dogname = dict["dogname"] as? String,
             let distance = dict["distance"] as? String,
         let dogslat = dict["dogslat"] as? Double,
-        let dogslong = dict["dogslong"] as? Double
+        let dogslong = dict["dogslong"] as? Double,
+            let dogsgender = dict["dogsgender"] as? String,
+        let usersprefgender = dict["usersprefgender"] as? String
 
             else {
                    return nil
            }
     
-        let user = User(uid: uid, username: username, email: email, profileImageUrl: profileImageUrl, status: status, dogname: dogname, distance: distance, dogslat: dogslat, dogslong: dogslong)
+        let user = User(uid: uid, username: username, email: email, profileImageUrl: profileImageUrl, status: status, dogname: dogname, distance: distance, dogslat: dogslat, dogslong: dogslong, dogsgender: dogsgender, usersprefgender: usersprefgender)
         
         let currentUserID : String = (Auth.auth().currentUser?.uid)!
         print(currentUserID)
@@ -59,6 +65,8 @@ class User{
             let value = snapshot.value as? NSDictionary
             let latt = value?["dogslat"] as? Double
             let long = value?["dogslong"] as? Double
+            let dogsgender = value?["dogsGender"] as? String
+            let usersprefgender = value?["prefgender"] as? String
           
           }) { (error) in
             print(error.localizedDescription)

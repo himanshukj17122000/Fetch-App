@@ -30,6 +30,7 @@ class PrefViewController: UIViewController {
             PrefMale.backgroundColor = UIColor.white
             PrefBoth.backgroundColor = UIColor.white
             PrefFemale.backgroundColor = UIColor.lightGray
+            randomuser.prefGender = "female"
         }
         else if PrefFemale.backgroundColor == UIColor.lightGray {
             PrefFemale.backgroundColor = UIColor.white
@@ -43,9 +44,11 @@ class PrefViewController: UIViewController {
             PrefFemale.backgroundColor = UIColor.white
             PrefBoth.backgroundColor = UIColor.white
             PrefMale.backgroundColor = UIColor.lightGray
+            randomuser.prefGender = "male"
         }
         else if PrefMale.backgroundColor == UIColor.lightGray {
             PrefMale.backgroundColor = UIColor.white
+            
         }
     }
     @IBAction func PrefBothTapped(_ sender: Any) {
@@ -54,6 +57,7 @@ class PrefViewController: UIViewController {
             PrefMale.backgroundColor = UIColor.white
             PrefFemale.backgroundColor = UIColor.white
             PrefBoth.backgroundColor = UIColor.lightGray
+            randomuser.prefGender = "both"
         }
         else if PrefBoth.backgroundColor == UIColor.lightGray {
             PrefBoth.backgroundColor = UIColor.white

@@ -1606,11 +1606,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="separatorColor" red="0.99895316359999997" green="0.70791542529999996" blue="0.81961745019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCell" rowHeight="105" id="PQ2-xR-8Ut" customClass="UserTableViewCell" customModule="JCoding" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="105"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCell" rowHeight="149" id="PQ2-xR-8Ut" customClass="UserTableViewCell" customModule="JCoding" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="149"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PQ2-xR-8Ut" id="Djc-d9-c8E">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ja-q6-smy">
@@ -1753,10 +1753,10 @@
             </objects>
             <point key="canvasLocation" x="2571.0144927536235" y="2045.7589285714284"/>
         </scene>
-        <!--Map View-->
+        <!--Map View Controller-->
         <scene sceneID="sRq-Ee-NkV">
             <objects>
-                <viewController storyboardIdentifier="MapView" id="Q27-tZ-N5b" customClass="MapView" customModule="JCoding" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="Q27-tZ-N5b" customClass="MapViewController" customModule="JCoding" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="app-2G-CKd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1765,11 +1765,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSu-nq-pDG">
+                                <rect key="frame" x="20" y="56" width="29" height="22"/>
+                                <state key="normal" image="back">
+                                    <color key="titleColor" red="0.99895316359999997" green="0.70791542529999996" blue="0.81961745019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="BackBtnDidTap:" destination="Q27-tZ-N5b" eventType="touchUpInside" id="7qq-H4-aSD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gSu-nq-pDG" firstAttribute="top" secondItem="Rec-4U-j52" secondAttribute="top" constant="12" id="BVh-R4-gph"/>
+                            <constraint firstItem="gSu-nq-pDG" firstAttribute="leading" secondItem="app-2G-CKd" secondAttribute="leadingMargin" id="uXa-SS-n0Y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rec-4U-j52"/>
                     </view>
-                    <navigationItem key="navigationItem" id="obW-Zk-CaP"/>
+                    <connections>
+                        <outlet property="backBtn" destination="gSu-nq-pDG" id="YlL-nB-GDq"/>
+                        <outlet property="mapView" destination="utr-Vc-ui6" id="8UB-Q5-zNc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPy-NT-E6e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1778,6 +1794,7 @@
     </scenes>
     <resources>
         <image name="attachment_icon" width="32" height="32"/>
+        <image name="back" width="29" height="17"/>
         <image name="background" width="950" height="113"/>
         <image name="button-dog" width="250" height="250"/>
         <image name="close" width="15.5" height="15"/>
