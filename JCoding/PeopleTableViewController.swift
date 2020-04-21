@@ -88,8 +88,8 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
                     let lattdiff = (latt!-user.dogslat)*(latt!-user.dogslat)
                     let longdiff = (long!-user.dogslong)*(long!-user.dogslong)
                     if ((Int((lattdiff+longdiff).squareRoot())) < dist!) {
-                        if(dogsprefgender!.elementsEqual(user.dogGender) == true) {
-                            if(dogsgender!.elementsEqual(user.prefgender) == true) {
+                        if(dogsprefgender!.elementsEqual(user.dogGender) == true) || (dogsprefgender!.elementsEqual("both") == true) {
+                            if(dogsgender!.elementsEqual(user.prefgender) == true) || (user.prefgender.elementsEqual("both") == true) {
                                 if(currentUserID.elementsEqual(user.uid) == false) {
                                     self.users.append(user)
                                 }
