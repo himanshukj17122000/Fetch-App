@@ -17,6 +17,7 @@ class randomuser {
     static var doglat: Double!
     static var doglong: Double!
     static var prefgender: String!
+    
 }
 class DogNameViewController: UIViewController, UITextFieldDelegate {
 
@@ -28,6 +29,7 @@ class DogNameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var DogName: UITextField!
     
     @IBOutlet weak var DogBio: UITextView!
+    
     
     @IBOutlet var genderOptions: [UIButton]!
     

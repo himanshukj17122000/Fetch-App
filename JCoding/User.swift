@@ -22,6 +22,7 @@ class User{
     var dogslong:Double
     var prefgender:String
     var dogGender:String
+    //var dogbio:String
 
     init(uid: String, username: String, email: String, profileImageUrl: String, status: String, dogname: String, distance: String, dogslat:Double, dogslong:Double, prefgender:String, dogGender:String
     ) {
@@ -36,6 +37,7 @@ class User{
         self.dogslong = dogslong
         self.prefgender = prefgender
         self.dogGender = dogGender
+//        self.dogbio = dogbio
         
        }
     
@@ -52,6 +54,7 @@ class User{
         let dogslong = dict["dogslong"] as? Double,
             let prefgender = dict["prefgender"] as? String,
         let dogGender = dict["dogsgender"] as? String
+//        let dogbio = dict["dogbio"] as? String
 
             else {
                    return nil

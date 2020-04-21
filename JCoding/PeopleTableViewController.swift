@@ -69,7 +69,7 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     func setupNavigation(){
-        navigationItem.title = "Animals"
+        navigationItem.title = "Pets nearby"
         navigationController?.navigationBar.prefersLargeTitles = true
         
     }
@@ -85,6 +85,7 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
                     let latt = value?["dogslat"] as? Double
                     let long = value?["dogslong"] as? Double
                     let dist = Int(value?["distance"] as! String)
+                    //let dogbio = value?["dogbio"] as! String
                     let lattdiff = (latt!-user.dogslat)*(latt!-user.dogslat)
                     let longdiff = (long!-user.dogslong)*(long!-user.dogslong)
                     if ((Int((lattdiff+longdiff).squareRoot())) < dist!) {
@@ -137,20 +138,41 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 105
+        return 130
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? UserTableViewCell{
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let chatVC = storyboard.instantiateViewController(identifier: "chatVC") as! ChatViewController
-            chatVC.imagePartner = cell.avatar.image
-            chatVC.userName = cell.userName.text
-            chatVC.otherUser = cell.user.uid
-            self.navigationController?.pushViewController(chatVC, animated: true)
-            
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if let cell = tableView.cellForRow(at: indexPath) as? UserTableViewCell{
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let chatVC = storyboard.instantiateViewController(identifier: "chatVC") as! ChatViewController
+//            chatVC.imagePartner = cell.avatar.image
+//            chatVC.userName = cell.userName.text
+//            chatVC.otherUser = cell.user.uid
+//            self.navigationController?.pushViewController(chatVC, animated: true)
+//
+//        }
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // and cast it to the correct class type 
+
+        let destVC = segue.destination as! detailViewController
+
+        // Pass the selected object to the new view controller.
+        let myRow = tableView!.indexPathForSelectedRow
+        let cell = tableView!.cellForRow(at: myRow!) as! UserTableViewCell
+
+        // set the destVC variables from the selected row
+        destVC.pic = cell.avatar.image
+        destVC.name = cell.user.dogname
+        destVC.distance = cell.user.distance
+        destVC.gender = cell.user.dogGender
+        //destVC.user = cell.user
+        //destVC.info = cell.user.dogBio
+
         }
-    }
+    
     
 
     /*

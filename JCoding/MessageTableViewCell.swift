@@ -14,7 +14,7 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var dateMessage: UILabel!
     @IBOutlet weak var bubbleView: UIView!
     @IBOutlet weak var photoMessage: UIImageView!
-    @IBOutlet weak var textMessafe: UILabel!
+    @IBOutlet weak var textMessage: UILabel!
     @IBOutlet weak var leftConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightConstraint: NSLayoutConstraint!
@@ -25,21 +25,21 @@ class MessageTableViewCell: UITableViewCell {
         bubbleView.layer.cornerRadius = 15
         bubbleView.clipsToBounds = true
         bubbleView.layer.borderWidth = 0.4
-        textMessafe.numberOfLines = 0
+        textMessage.numberOfLines = 0
         photoMessage.layer.cornerRadius = 15
         photoMessage.clipsToBounds = true
         profileImage.layer.cornerRadius = 16
         profileImage.clipsToBounds = true
         photoMessage.isHidden = true
         profileImage.isHidden = true
-        textMessafe.isHidden = true
+        textMessage.isHidden = true
         // Initialization code
     }
     func configureCell(uid:String, message:Message, image:UIImage){
         let text = message.text
         if !text.isEmpty{
-            textMessafe.isHidden = false
-            textMessafe.text = message.text
+            textMessage.isHidden = false
+            textMessage.text = message.text
             let widthValue = text.estimateFrameForText(text: text).width
                 if widthValue < 100 {
                     widthConstraint.constant = 100
@@ -76,7 +76,7 @@ class MessageTableViewCell: UITableViewCell {
         super.prepareForReuse()
         photoMessage.isHidden = true
               profileImage.isHidden = true
-              textMessafe.isHidden = true
+              textMessage.isHidden = true
     
     }
 

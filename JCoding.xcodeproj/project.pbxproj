@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5901CC244EBD59006FF055 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5901CB244EBD59006FF055 /* detailViewController.swift */; };
 		793FD6E2F9395B5AF3B0E72D /* Pods_JCoding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62EB7494FE7D60D61BDEAC8 /* Pods_JCoding.framework */; };
 		A32852582435DF8100BC353F /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32852572435DF8100BC353F /* StorageService.swift */; };
 		A335D1B52437B2BC0086B683 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335D1B42437B2BC0086B683 /* User.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B5901CB244EBD59006FF055 /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		3C853EC15CC113197C0D6EB6 /* Pods-JCoding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCoding.release.xcconfig"; path = "Pods/Target Support Files/Pods-JCoding/Pods-JCoding.release.xcconfig"; sourceTree = "<group>"; };
 		A32852572435DF8100BC353F /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		A335D1B42437B2BC0086B683 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				A3388D062431F960005CE11A /* Welcome.storyboard */,
 				A3365FDD243DD6820084063A /* MessageTableViewCell.swift */,
 				A3388D082431FA64005CE11A /* Main.storyboard */,
+				3B5901CB244EBD59006FF055 /* detailViewController.swift */,
 				F32A90E02443F4BD00480D57 /* ProfileTableViewController.swift */,
 				F32A90E22444298500480D57 /* PicViewController.swift */,
 				F32A90DC2443C4E200480D57 /* RoundedButton.swift */,
@@ -343,6 +346,7 @@
 				A3F9FEBA24379907003F6459 /* MessagesTableViewController.swift in Sources */,
 				A34AE0C5243251DC00106109 /* ForgotPwViewController.swift in Sources */,
 				A3F9FEBC2437A1FB003F6459 /* PeopleTableViewController.swift in Sources */,
+				3B5901CC244EBD59006FF055 /* detailViewController.swift in Sources */,
 				A336B2AE243CAB48001E586A /* MessageApi.swift in Sources */,
 				F3A5E21724438E220079324D /* DogNameViewController.swift in Sources */,
 				A34AE0C72432520000106109 /* ForgotPwViewController+UI.swift in Sources */,
