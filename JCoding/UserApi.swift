@@ -95,7 +95,7 @@ class UserApi {
     typealias UserFromDB = (User) -> Void
     
     
-    func signUp(withUsername userName: String, email:String, password:String, image:UIImage?, dogName: String, dogAge: String, dogBreed:String, dogBio:String, dogGender:String, dogLat:Double, dogLong:Double, distance:String, prefGender:String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage:String) -> Void) {
+    func signUp(withUsername userName: String, email:String, password:String, image:UIImage?, dogName: String, dogAge: String, dogBreed:String, dogBio:String, dogGender:String, dogLat:Double, dogLong:Double, distance:String, prefgender:String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage:String) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) {(authDataResult, error) in
             if error != nil {
                 ProgressHUD.showError(error!.localizedDescription)
@@ -117,7 +117,8 @@ class UserApi {
                     "dogslat": dogLat,
                     "dogslong": dogLong,
                     "distance": distance,
-                    "prefgender": prefGender
+                    "prefgender": prefgender
+                
                 ]
                 guard let imageSelected = image else {
                          ProgressHUD.showError("Please choose your profile image")

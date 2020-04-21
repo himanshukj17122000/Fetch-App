@@ -20,9 +20,10 @@ class User{
     var distance:String
     var dogslat:Double
     var dogslong:Double
-    var dogsgender:String
-    var usersprefgender:String
-    init(uid: String, username: String, email: String, profileImageUrl: String, status: String, dogname: String, distance: String, dogslat:Double, dogslong:Double, dogsgender:String, usersprefgender:String
+    var prefgender:String
+    var dogGender:String
+
+    init(uid: String, username: String, email: String, profileImageUrl: String, status: String, dogname: String, distance: String, dogslat:Double, dogslong:Double, prefgender:String, dogGender:String
     ) {
            self.uid = uid
            self.username = username
@@ -33,8 +34,9 @@ class User{
         self.distance = distance
         self.dogslat = dogslat
         self.dogslong = dogslong
-        self.dogsgender = dogsgender
-        self.usersprefgender = usersprefgender
+        self.prefgender = prefgender
+        self.dogGender = dogGender
+        
        }
     
     
@@ -48,14 +50,14 @@ class User{
             let distance = dict["distance"] as? String,
         let dogslat = dict["dogslat"] as? Double,
         let dogslong = dict["dogslong"] as? Double,
-            let dogsgender = dict["dogsgender"] as? String,
-        let usersprefgender = dict["usersprefgender"] as? String
+            let prefgender = dict["prefgender"] as? String,
+        let dogGender = dict["dogsgender"] as? String
 
             else {
                    return nil
            }
     
-        let user = User(uid: uid, username: username, email: email, profileImageUrl: profileImageUrl, status: status, dogname: dogname, distance: distance, dogslat: dogslat, dogslong: dogslong, dogsgender: dogsgender, usersprefgender: usersprefgender)
+        let user = User(uid: uid, username: username, email: email, profileImageUrl: profileImageUrl, status: status, dogname: dogname, distance: distance, dogslat: dogslat, dogslong: dogslong, prefgender: prefgender, dogGender: dogGender)
         
         let currentUserID : String = (Auth.auth().currentUser?.uid)!
         print(currentUserID)
@@ -65,28 +67,10 @@ class User{
             let value = snapshot.value as? NSDictionary
             let latt = value?["dogslat"] as? Double
             let long = value?["dogslong"] as? Double
-            let dogsgender = value?["dogsGender"] as? String
-            let usersprefgender = value?["prefgender"] as? String
           
           }) { (error) in
             print(error.localizedDescription)
         }
-        
-       // print(currentUser.dogslong!)
-//        let longdiff = user.dogslong - currentUser.dogslong
-//        print(longdiff)
-//        let latdiff = user.dogslat - Double(currentUser.dogslat!)
-//        print(latdiff)
-//        let sqrroot = Int((longdiff + latdiff).squareRoot())
-//
-//        let distt = Int((currentUser.dist)!)
-//        if(sqrroot < distt!) {
-//            return user
-//        } else {
-//            return nil
-//        }
-    
-
             return user
 }
 

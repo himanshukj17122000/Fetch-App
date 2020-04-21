@@ -53,10 +53,10 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
         
     }
     
-    @IBAction func mapView(_ sender: Any) {
-        let mapVC = storyboard?.instantiateViewController(identifier: "MapViewController") as! MapViewController; self.navigationController?.pushViewController(mapVC, animated: true)
-        mapVC.users = self.users
-    }
+//    @IBAction func mapView(_ sender: Any) {
+//        let mapVC = storyboard?.instantiateViewController(identifier: "MapViewController") as! MapViewController; self.navigationController?.pushViewController(mapVC, animated: true)
+//        mapVC.users = self.users
+//    }
     func setupSearchBarController(){
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = true
@@ -75,43 +75,39 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     func observeUsers(){
-        Api.User.observeUsers{ (user) in
-            let currentUserID : String = (Auth.auth().currentUser?.uid)!
-            let ref = Database.database().reference()
-            ref.child("users").child(currentUserID).queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
-                let value = snapshot.value as? NSDictionary
-                let prefGender = (value?["prefgender"] as? String ?? "female")
-                let genderofthecurrentuser = (value?["dogsgender"] as? String ?? "female")
-                print("this is the gender of teh current user \(genderofthecurrentuser)")
-                print("this is the pref gender of teh current user \(prefGender)")
-                let genderoftheuser = user.dogsgender
-                print("this is the gender of teh other user \(genderoftheuser)")
-                let prefgenderoftheuser = user.usersprefgender
-                print("this is the pref gender of teh other user \(prefgenderoftheuser)")
-                let latt = value?["dogslat"] as? Double
-                let long = value?["dogslong"] as? Double
-                let dist = Int(value?["distance"] as! String)
-                let lattdiff = (latt!-user.dogslat)*(latt!-user.dogslat)
-                let longdiff = (long!-user.dogslong)*(long!-user.dogslong)
-                print(genderoftheuser)
-                print(prefGender)
-                if ((Int((lattdiff+longdiff).squareRoot())) < dist!) {
-                    if ((genderoftheuser.elementsEqual(prefGender) == true) && (genderofthecurrentuser.elementsEqual(prefgenderoftheuser)) == true) {
-                    
-                        self.users.append(user)
+       Api.User.observeUsers{ (user) in
+                let currentUserID : String = (Auth.auth().currentUser?.uid)!
+                let ref = Database.database().reference()
+                ref.child("users").child(currentUserID).queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+                    let value = snapshot.value as? NSDictionary
+                    let dogsgender = value?["dogsgender"] as? String
+                    let dogsprefgender = value?["prefgender"] as? String
+                    let latt = value?["dogslat"] as? Double
+                    let long = value?["dogslong"] as? Double
+                    let dist = Int(value?["distance"] as! String)
+                    let lattdiff = (latt!-user.dogslat)*(latt!-user.dogslat)
+                    let longdiff = (long!-user.dogslong)*(long!-user.dogslong)
+                    if ((Int((lattdiff+longdiff).squareRoot())) < dist!) {
+                        if(dogsprefgender!.elementsEqual(user.dogGender) == true) {
+                            if(dogsgender!.elementsEqual(user.prefgender) == true) {
+                                if(currentUserID.elementsEqual(user.uid) == false) {
+                                    self.users.append(user)
+                                }
+                            }
+                        }
                     }
+                    self.tableView.reloadData()
+                    
+                  }) { (error) in
+                    print(error.localizedDescription)
                 }
-                self.tableView.reloadData()
                 
-              }) { (error) in
-                print(error.localizedDescription)
             }
-            
+            for user in users {
+                print(user.uid)
+            }
         }
-        for user in users {
-            print(user.uid)
-        }
-    }
+
 
     // MARK: - Table view data source
 
