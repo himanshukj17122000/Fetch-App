@@ -162,7 +162,7 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
-        // and cast it to the correct class type 
+        // and cast it to the correct class type
 
         let destVC = segue.destination as! detailViewController
 
@@ -175,7 +175,7 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
         destVC.name = cell.user.dogname
         destVC.distance = cell.user.distance
         destVC.gender = cell.user.dogGender
-        //destVC.user = cell.user
+        destVC.user = cell.user.uid
         destVC.info = cell.user.dogsbio
 
         }

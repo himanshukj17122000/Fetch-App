@@ -14,6 +14,7 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var dateMessage: UILabel!
     @IBOutlet weak var bubbleView: UIView!
     @IBOutlet weak var photoMessage: UIImageView!
+    
     @IBOutlet weak var textMessage: UILabel!
     @IBOutlet weak var leftConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!

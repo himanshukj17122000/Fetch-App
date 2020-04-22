@@ -12,6 +12,7 @@ class MessageApi{
     func sendMessage(from:String, to:String, value:Dictionary<String,Any>){
         let ref = Ref().databaseMessageSendTo(from: from, to: to)
         ref.childByAutoId().updateChildValues(value)
+        
     }
     func receiveMessages(from:String, to:String, onSuccess: @escaping(Message) -> Void){
         let ref = Ref().databaseMessageSendTo(from: from, to: to)

@@ -26,6 +26,7 @@ class detailViewController: UIViewController {
     var gender : String = ""
     var name : String = ""
     var pic : UIImage?
+    var user: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,17 @@ class detailViewController: UIViewController {
         nameLbl.text = name
         photo.image = pic
     }
-
+    @IBAction func changeScenes(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let chatVC = storyboard.instantiateViewController(identifier: "chatVC") as! ChatViewController
+        chatVC.imagePartner = photo.image
+        chatVC.userName =  name
+        chatVC.otherUser = user
+        self.navigationController?.pushViewController(chatVC, animated: true)
+    }
+    
+          
+       
         
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        // Get the new view controller using segue.destination.
