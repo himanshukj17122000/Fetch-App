@@ -1,6 +1,6 @@
 ## Fetch
-[Video](https://www.youtube.com/watch?v=FzUO4GXeDh0)
-[Sketch](https://drive.google.com/file/d/1jfHRJpVwT6Gruy72wft9Gl0Cb_Lu_FY-/view?usp=sharing)
+- [Video](https://www.youtube.com/watch?v=FzUO4GXeDh0)
+- [Sketch](https://drive.google.com/file/d/1jfHRJpVwT6Gruy72wft9Gl0Cb_Lu_FY-/view?usp=sharing)
 
 ## Overview
 
