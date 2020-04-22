@@ -90,6 +90,7 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
                     //let dogbio = value?["dogbio"] as! String
                     let lattdiff = (latt!-user.dogslat)*(latt!-user.dogslat)
                     let longdiff = (long!-user.dogslong)*(long!-user.dogslong)
+    
                     if ((Int((lattdiff+longdiff).squareRoot())) < dist!) {
                         if(dogsprefgender!.elementsEqual(user.dogGender) == true) || (dogsprefgender!.elementsEqual("both") == true) {
                             if(dogsgender!.elementsEqual(user.prefgender) == true) || (user.prefgender.elementsEqual("both") == true) {
@@ -171,7 +172,7 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
         destVC.distance = cell.user.distance
         destVC.gender = cell.user.dogGender
         //destVC.user = cell.user
-        //destVC.info = cell.user.dogBio
+        destVC.info = cell.user.dogsbio
 
         }
     

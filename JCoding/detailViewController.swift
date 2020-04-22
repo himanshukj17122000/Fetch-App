@@ -14,7 +14,6 @@ class detailViewController: UIViewController {
     
 
     @IBOutlet weak var MessageBtn: UIButton!
-    @IBOutlet weak var messageLbl: UILabel!
     @IBOutlet weak var infoLbl: UILabel!
     @IBOutlet weak var locLbl: UILabel!
     @IBOutlet weak var genderLbl: UILabel!
@@ -22,7 +21,6 @@ class detailViewController: UIViewController {
     @IBOutlet weak var photo: UIImageView!
     
     //var user : User?
-    var message = "chat with me!"
     var info : String = ""
     var distance : String = ""
     var gender : String = ""
@@ -31,8 +29,7 @@ class detailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messageLbl.text = message
-        //infoLbl.text = info
+        infoLbl.text = info
         genderLbl.text = gender
         locLbl.text = distance
         nameLbl.text = name

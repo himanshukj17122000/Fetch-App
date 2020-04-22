@@ -23,9 +23,9 @@ class User{
     var dogslong:Double
     var prefgender:String
     var dogGender:String
-    //var dogbio:String
+    var dogsbio:String
 
-    init(uid: String, username: String, email: String, profileImageUrl: String, status: String, dogname: String, distance: String, dogslat:Double, dogslong:Double, prefgender:String, dogGender:String
+    init(uid: String, username: String, email: String, profileImageUrl: String, status: String, dogname: String, distance: String, dogslat:Double, dogslong:Double, prefgender:String, dogGender:String, dogsbio:String
     ) {
            self.uid = uid
            self.username = username
@@ -38,7 +38,7 @@ class User{
         self.dogslong = dogslong
         self.prefgender = prefgender
         self.dogGender = dogGender
-//        self.dogbio = dogbio
+        self.dogsbio = dogsbio
         
        }
     
@@ -54,14 +54,14 @@ class User{
         let dogslat = dict["dogslat"] as? Double,
         let dogslong = dict["dogslong"] as? Double,
             let prefgender = dict["prefgender"] as? String,
-        let dogGender = dict["dogsgender"] as? String
-//        let dogbio = dict["dogbio"] as? String
+        let dogGender = dict["dogsgender"] as? String,
+        let dogsbio = dict["dogsbio"] as? String
 
             else {
                    return nil
            }
     
-        let user = User(uid: uid, username: username, email: email, profileImageUrl: profileImageUrl, status: status, dogname: dogname, distance: distance, dogslat: dogslat, dogslong: dogslong, prefgender: prefgender, dogGender: dogGender)
+        let user = User(uid: uid, username: username, email: email, profileImageUrl: profileImageUrl, status: status, dogname: dogname, distance: distance, dogslat: dogslat, dogslong: dogslong, prefgender: prefgender, dogGender: dogGender, dogsbio:dogsbio)
         
         let currentUserID : String = (Auth.auth().currentUser?.uid)!
         print(currentUserID)
