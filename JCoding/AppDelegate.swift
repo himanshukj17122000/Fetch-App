@@ -8,16 +8,68 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
+import FBSDKCoreKit
+import GoogleSignIn
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+   
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        return true
-    }
+        configureInitialContainer()
+        
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        GIDSignIn.sharedInstance()?.clientID = "302288672397-fpqi3sj9c50rm2t20hklpsq8jkbbjck4.apps.googleusercontent.com"
+            
+               return true
+           }
 
+           
+           
+          @available(iOS 9.0, *)
+           func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+               var handled = false
+               
+               if url.absoluteString.contains("fb") {
+                handled = ApplicationDelegate.shared.application(app, open: url, options: options)
+               } else {
+                        handled = GIDSignIn.sharedInstance().handle(url)
+                            
+
+               }
+               
+               
+               return handled
+           }
+    
+    func application(_ application: UIApplication,
+                     open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+      return GIDSignIn.sharedInstance().handle(url)
+    }
+   
+    
+    func configureInitialContainer(){
+        var initialVC: UIViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if Auth.auth().currentUser != nil {
+            initialVC = storyboard.instantiateViewController(withIdentifier: "TabVC")
+        } else {
+            initialVC = storyboard.instantiateViewController(withIdentifier: "MainVC")
+        }
+        SceneDelegate.shared?.window?.rootViewController = initialVC
+        SceneDelegate.shared?.window?.makeKeyAndVisible()
+        
+    }
+    func configureMapContainer(){
+        var initialVC: UIViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        initialVC = storyboard.instantiateViewController(withIdentifier: "mapView")
+        SceneDelegate.shared?.window?.rootViewController = initialVC
+        SceneDelegate.shared?.window?.makeKeyAndVisible()
+        
+    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

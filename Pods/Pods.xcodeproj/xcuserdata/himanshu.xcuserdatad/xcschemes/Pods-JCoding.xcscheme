@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "44C68AEB9C5F81ED4932458315CC5BDF"
+               BlueprintIdentifier = "87C5B92E8CC491C3436859153537AAB0"
                BuildableName = "Pods_JCoding.framework"
                BlueprintName = "Pods-JCoding"
                ReferencedContainer = "container:Pods.xcodeproj">

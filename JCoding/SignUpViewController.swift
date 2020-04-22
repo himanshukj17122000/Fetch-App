@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
+import ProgressHUD
 
 class SignUpViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
@@ -20,6 +24,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var firstnameText: UITextField!
     @IBOutlet weak var firstContainer: UIView!
     @IBOutlet weak var avatarImage: UIImageView!
+    var image: UIImage? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -39,5 +44,16 @@ class SignUpViewController: UIViewController {
    
     @IBAction func dismissView(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    
+    @IBAction func signUpUser(_ sender: Any) {
+        self.view.endEditing(true)
+        self.validateFields()
+        self.signUp(onSuccess: {
+            (UIApplication.shared.delegate as! AppDelegate).configureInitialContainer()
+        }){(errorMessage) in
+            ProgressHUD.showError(errorMessage)
+        }
     }
 }

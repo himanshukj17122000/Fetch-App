@@ -10,4 +10,10 @@ target 'JCoding' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'ProgressHUD'
+  pod 'SDWebImage'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'Firebase/Messaging'
+  pod 'GoogleSignIn'
 end
