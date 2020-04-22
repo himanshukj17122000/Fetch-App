@@ -31,8 +31,8 @@ extension SignUpViewController{
        
         
         let attributedText = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font: UIFont.init(name: "Didot", size:28)!, NSAttributedString.Key.foregroundColor: UIColor.black])
-        titleLabel.numberOfLines = 0
-    titleLabel.attributedText=attributedText
+        //titleLabel.numberOfLines = 0
+   // titleLabel.attributedText=attributedText
     }
     
     func setupAvatar(){

@@ -25,7 +25,7 @@ class UserTableViewCell: UITableViewCell {
     func loadData(_ user:User){
         self.user = user
         self.userName.text = user.username
-        self.status.text = user.Status
+        self.status.text = user.dogGender
         self.avatar.loadImage(user.profileImageUrl)
     }
 

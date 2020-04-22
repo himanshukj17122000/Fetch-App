@@ -17,6 +17,7 @@ class randomuser {
     static var doglat: Double!
     static var doglong: Double!
     static var prefgender: String!
+    static var image1: UIImage!
     
 }
 class DogNameViewController: UIViewController, UITextFieldDelegate {

@@ -21,13 +21,14 @@ let STATUS = "status"
 extension ViewController: GIDSignInDelegate  {
   
     func setupHeaderTitle(){
-        let title="Create a new account"
-        let subtitle="\nWelcome to out PetApp. This App works to connect dog owners with other dog owners in order to build a community of Dog lovers"
+        let title="Welcome to Fetch!"
+        let subtitle="\nThis App works to connect dog owners with other dog owners in order to build a community of Dog lovers."
         
         let attributedText = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font: UIFont.init(name: "Didot", size:28)!, NSAttributedString.Key.foregroundColor: UIColor.black])
         
         let attributedSubText = NSMutableAttributedString(string: subtitle, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor(white:0, alpha:0.45)])
         attributedText.append(attributedSubText)
+        titleLabel.textColor = UIColor.systemPink
         titleLabel.numberOfLines = 0
         titleLabel.attributedText=attributedText
     }
@@ -43,8 +44,8 @@ extension ViewController: GIDSignInDelegate  {
         
         let attributedSubtermsText = NSMutableAttributedString(string: "Terms of Service.", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor(white:0, alpha:0.65)])
         attributedTermsText.append(attributedSubtermsText)
-        termsandservices.attributedText = attributedTermsText
-        termsandservices.numberOfLines = 0
+        //termsandservices.attributedText = attributedTermsText
+       // termsandservices.numberOfLines = 0
     }
     
     func setupFacebook(){

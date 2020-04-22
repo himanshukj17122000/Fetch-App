@@ -13,6 +13,9 @@ import CoreLocation
 class LocationViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
 
+    @IBAction func close(_ sender: Any) {
+navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.requestAlwaysAuthorization()
