@@ -37,19 +37,23 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
     var searchController : UISearchController = UISearchController(searchResultsController: nil)
     override func viewDidLoad() {
         super.viewDidLoad()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupSearchBarController()
         setupNavigation()
         observeUsers()
         setupTableView()
+        self.users.removeAll()
+
     }
-    @IBAction func refreshTapped(_ sender: Any) {
-    }
-    
-        // Uncomment the following line to preserve selection between presentations
+    // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem
     
     func setupTableView(){
         tableView.tableFooterView = UIView()
@@ -93,7 +97,6 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
                     //let dogbio = value?["dogbio"] as! String
                     let lattdiff = (latt!-user.dogslat)*(latt!-user.dogslat)
                     let longdiff = (long!-user.dogslong)*(long!-user.dogslong)
-    
                     if ((Int((lattdiff+longdiff).squareRoot())) < dist!) {
                         if(dogsprefgender!.elementsEqual(user.dogGender) == true) || (dogsprefgender!.elementsEqual("both") == true) {
                             if(dogsgender!.elementsEqual(user.prefgender) == true) || (user.prefgender.elementsEqual("both") == true) {
@@ -103,15 +106,13 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
                             }
                         }
                     }
+                    
                     self.tableView.reloadData()
                     
                   }) { (error) in
                     print(error.localizedDescription)
                 }
                 
-            }
-            for user in users {
-                print(user.uid)
             }
         }
 

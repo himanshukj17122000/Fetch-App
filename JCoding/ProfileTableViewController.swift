@@ -161,11 +161,11 @@ class ProfileTableViewController: UITableViewController {
         }
         
         if (preffemale.backgroundColor == UIColor.lightGray) {
-            dict["dogsgender"] = "female"
+            dict["prefgender"] = "female"
         } else if (prefmale.backgroundColor == UIColor.lightGray){
-            dict["dogsgender"] = "male"
+            dict["prefgender"] = "male"
         } else {
-            dict["dogsgender"] = "both"
+            dict["prefgender"] = "both"
         }
         
         Api.User.saveUserProfile(dict: dict, onSuccess: {
