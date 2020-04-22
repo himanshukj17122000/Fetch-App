@@ -14,6 +14,17 @@
 
 - Welcome Screen, Dog Information Screens (3), Sign Up Screen, Sign In Screen, Reset Password Screen, User Profile Screens (2),
   Map, Users Table View Controller, User Detailed View Controller, User Chat Screen
+  
+## Frameworks Used
+- Swift MapKit, 
+- Swift UI Kit, 
+### Cocoa Pods
+    - FireBase
+        - Various different pods frameworks that can be seen in the podFile. 
+    - ProgressHUD
+    - SDWebImage
+    - Facebook Login core kIt
+    - GoogleSignIn
 
 ## Features
 
@@ -35,8 +46,13 @@
 - Navigate to the terminal and run "pod install" before running the program.
 - After the installation is done open the file `JCoding.xcworkspace` and run it to see the application
 
-- Team Contributions
+## Team Contributions
   - Himanshu Jain: Firebase Configuration, Chat Feature, Firebase Authentications and getting the user from the database, Basic layout for other view controllers
   - Bilge Tatar- Dog Information View Controllers, Storing User Location, 'Me' View Controller, Filtering Users based on the preferences, Icons used in the App
-  - Donald Groh- Map View Controller, Location feature
-  - Emma Helmitch- User's Detailed View Controller, Icon of the App, Ideation
+  - Donald Groh- Map View Controller, Location feature, filtering user features, editing data requesting , and editing "Me" View Controller
+  - Emma Helmitch- User's Detailed View Controller, Icon of the App, Ideation'
+  
+  ## Possible Improvements
+  - We discuss this in the video in a fair amount of detail, but the main area that we would improve the way that the application currently runs is through the Sign-In and Sighn-Up pages. Although we have google and facebook authentification, since these frameworks do not provide all the data that we would need to build a user, we would have constructed the application in a little different manner. Possibly in such a way that after creating the dog information, on the email sign in page, there would be the options to sign up with google or facebook rather than having those options where they currenlty are. Additionally we could have a little bit more organized flow of the sign up screens so that you select whether to sign in or sign up early on. 
+  
+  - In terms of features that we would like to implement, we explain a lot in the video, but really the extent of the features that we would want to implement is unlimited because there would be so many addditional features to get us to the point of being a fully functional and effective application. Please contact us for further elaboration of these possible features. 
