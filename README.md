@@ -9,8 +9,28 @@ https://drive.google.com/file/d/1jfHRJpVwT6Gruy72wft9Gl0Cb_Lu_FY-/view?usp=shari
 
 - Hence, we believe that this application would help dog owners to form a close-knit community so that even their dogs can get more friends.
 
+## Design
+
+- Welcome Screen, Dog Information Screens (3), Sign Up Screen, Sign In Screen, Reset Password Screen, User Profile Screens (2),
+  Map, Users Table View Controller, User Detailed View Controller, User Chat Screen
+
+## Features
+
+- Sign-Up by submitting dog information, your email Id and dog's picture
+- Sign-In feature using your email and password
+- Reset Password feature with the email being sent to your email ID
+- Google and Facebook Sign Ins
+- Auto-Sign In
+- Location Services
+- Map View Controller showing nearby users
+- Search Bar for looking through Users
+- User Profile information that can be edited
+- Filtering users based on the preferences
+- Chat with other users: send photos and videos
+- Firebase
+
 - Team Contributions
-  - Himanshu Jain- Firebase Configuration, Chat Feature, Firebase Authentications and getting the user from the database, Basic layout for other view controllers
+  - Himanshu Jain: Firebase Configuration, Chat Feature, Firebase Authentications and getting the user from the database, Basic layout for other view controllers
   - Bilge Tatar- Dog Information View Controllers, Storing User Location, 'Me' View Controller, Filtering Users based on the preferences, Icons used in the App
   - Donald Groh- Map View Controller, Location feature
   - Emma Helmitch- User's Detailed View Controller, Icon of the App, Ideation
