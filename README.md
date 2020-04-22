@@ -30,6 +30,11 @@
 - Chat with other users: send photos and videos
 - Firebase
 
+## Instructions To Run
+
+- Navigate to the terminal and run "pod install" before running the program.
+- After the installation is done open the file `JCoding.xcworkspace` and run it to see the application
+
 - Team Contributions
   - Himanshu Jain: Firebase Configuration, Chat Feature, Firebase Authentications and getting the user from the database, Basic layout for other view controllers
   - Bilge Tatar- Dog Information View Controllers, Storing User Location, 'Me' View Controller, Filtering Users based on the preferences, Icons used in the App
