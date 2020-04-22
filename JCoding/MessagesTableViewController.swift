@@ -26,9 +26,6 @@ class MessagesTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    @IBAction func logoutAction(_ sender: Any) {
-        Api.User.logOut()
-    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
