@@ -22,10 +22,23 @@ class Ref {
         return databaseRoot.child("messages")
     }
     
+    var databaseInbox: DatabaseReference{
+        return databaseRoot.child("inbox")
+    }
+    func databaseInbox(from:String, to:String) ->
+    DatabaseReference {
+        databaseInbox.child(from).child(to)
+    }
+    func databaseInboxForuser(uid:String) -> DatabaseReference{
+        return databaseInbox.child(uid)
+    }
+    
     func databaseMessageSendTo(from:String, to:String) ->
         DatabaseReference {
             databaseMessage.child(from).child(to)
         }
+    
+
     
     
     var databaseUsers: DatabaseReference {

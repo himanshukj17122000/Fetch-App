@@ -9,15 +9,34 @@
 import UIKit
 
 class MessagesTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
+   var inboxArray = [Inbox]()
+    
+    
+override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+   
+    
+       setupTableView()
+    
+    
+    observeInbox()
+ 
+    }
+    
+    func observeInbox(){
+        Api.Inbox.lastMessage(uid: Api.User.currentUserId){ (inbox) in
+            if !self.inboxArray.contains(where: { $0.user.uid == inbox.user.uid}){
+                self.inboxArray.append(inbox)
+                self.sortedInbox()
+            }
+        }
+    }
+    
+    func sortedInbox(){
+        inboxArray = inboxArray.sorted(by:  {$0.date>$1.date})
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     func setupTableView(){
         tableView.tableFooterView = UIView()
@@ -28,23 +47,26 @@ class MessagesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return inboxArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InboxCell", for: indexPath) as! InboxTableViewCell
+        let index = self.inboxArray[indexPath.row]
+        cell.configureCell(uid: Api.User.currentUserId, inbox: index)
+        
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -33,6 +33,9 @@
 		A369D4C62434B0D40044E2DF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369D4C52434B0D40044E2DF /* Api.swift */; };
 		A369D4C82434B1190044E2DF /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369D4C72434B1190044E2DF /* UserApi.swift */; };
 		A3914B9324334D9800D7B7AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3914B9224334D9800D7B7AE /* GoogleService-Info.plist */; };
+		A3922225245046E1007ADC47 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3922224245046E1007ADC47 /* Inbox.swift */; };
+		A392222724504E35007ADC47 /* InboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392222624504E35007ADC47 /* InboxTableViewCell.swift */; };
+		A392222924504F5E007ADC47 /* InboxApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392222824504F5E007ADC47 /* InboxApi.swift */; };
 		A3CC52CC2435E3FE00B9E00B /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CC52CB2435E3FE00B9E00B /* Ref.swift */; };
 		A3F9FEBA24379907003F6459 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9FEB924379907003F6459 /* MessagesTableViewController.swift */; };
 		A3F9FEBC2437A1FB003F6459 /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9FEBB2437A1FB003F6459 /* PeopleTableViewController.swift */; };
@@ -76,6 +79,9 @@
 		A369D4C52434B0D40044E2DF /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		A369D4C72434B1190044E2DF /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		A3914B9224334D9800D7B7AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A3922224245046E1007ADC47 /* Inbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
+		A392222624504E35007ADC47 /* InboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxTableViewCell.swift; sourceTree = "<group>"; };
+		A392222824504F5E007ADC47 /* InboxApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxApi.swift; sourceTree = "<group>"; };
 		A3CC52CB2435E3FE00B9E00B /* Ref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
 		A3F9FEB924379907003F6459 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
 		A3F9FEBB2437A1FB003F6459 /* PeopleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 				A3388D082431FA64005CE11A /* Main.storyboard */,
 				3B5901CB244EBD59006FF055 /* detailViewController.swift */,
 				F32A90E02443F4BD00480D57 /* ProfileTableViewController.swift */,
+				A392222624504E35007ADC47 /* InboxTableViewCell.swift */,
 				F32A90E22444298500480D57 /* PicViewController.swift */,
 				F32A90DC2443C4E200480D57 /* RoundedButton.swift */,
 				F3A5E218244391D50079324D /* PrefViewController.swift */,
@@ -163,6 +170,7 @@
 				A3388D1024322115005CE11A /* SignViewController.swift */,
 				A3388D1224322294005CE11A /* SignEmailViewController+UI.swift */,
 				A3388CF22431F911005CE11A /* AppDelegate.swift */,
+				A392222824504F5E007ADC47 /* InboxApi.swift */,
 				A3388CF42431F911005CE11A /* SceneDelegate.swift */,
 				A3F9FEBD2437A45A003F6459 /* UserTableViewCell.swift */,
 				A3388CF62431F911005CE11A /* ViewController.swift */,
@@ -171,6 +179,7 @@
 				A3388CFD2431F911005CE11A /* LaunchScreen.storyboard */,
 				A3388D002431F911005CE11A /* Info.plist */,
 				A3388D0C24320D73005CE11A /* SignUpViewController.swift */,
+				A3922224245046E1007ADC47 /* Inbox.swift */,
 				A3388D0E243218C1005CE11A /* SignInViewController_UI.swift */,
 				A32852572435DF8100BC353F /* StorageService.swift */,
 				A3914B9224334D9800D7B7AE /* GoogleService-Info.plist */,
@@ -347,6 +356,7 @@
 				A34AE0C5243251DC00106109 /* ForgotPwViewController.swift in Sources */,
 				A3F9FEBC2437A1FB003F6459 /* PeopleTableViewController.swift in Sources */,
 				3B5901CC244EBD59006FF055 /* detailViewController.swift in Sources */,
+				A392222924504F5E007ADC47 /* InboxApi.swift in Sources */,
 				A336B2AE243CAB48001E586A /* MessageApi.swift in Sources */,
 				F3A5E21724438E220079324D /* DogNameViewController.swift in Sources */,
 				A34AE0C72432520000106109 /* ForgotPwViewController+UI.swift in Sources */,
@@ -361,11 +371,13 @@
 				A3388CF32431F911005CE11A /* AppDelegate.swift in Sources */,
 				A3388D0B24320B64005CE11A /* ViewController+UI.swift in Sources */,
 				F32A90E32444298500480D57 /* PicViewController.swift in Sources */,
+				A392222724504E35007ADC47 /* InboxTableViewCell.swift in Sources */,
 				A335D1BF2437B6E80086B683 /* Extension.swift in Sources */,
 				A369D4C82434B1190044E2DF /* UserApi.swift in Sources */,
 				A335D1B52437B2BC0086B683 /* User.swift in Sources */,
 				A3365FDC243DCEB20084063A /* Messages.swift in Sources */,
 				A3388CF52431F911005CE11A /* SceneDelegate.swift in Sources */,
+				A3922225245046E1007ADC47 /* Inbox.swift in Sources */,
 				A3365FDE243DD6820084063A /* MessageTableViewCell.swift in Sources */,
 				A3F9FEBE2437A45A003F6459 /* UserTableViewCell.swift in Sources */,
 				A336B2AC243C95C2001E586A /* ChatViewController.swift in Sources */,

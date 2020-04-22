@@ -60,6 +60,18 @@ class UserApi {
         (UIApplication.shared.delegate as! AppDelegate).configureInitialContainer()
     }
     
+    func getUserInfo( uid:String,onSuccess: @escaping(UserFromDB)){
+        let ref = Ref().databaseSpecificUser(uid: uid)
+        ref.observe(.value){(snapshot) in
+            if let dict = snapshot.value as? Dictionary<String,Any> {
+                if let user = User.transformUser(dict: dict){
+                    onSuccess(user)
+                }
+             
+            }
+        }
+    }
+    
     
 //    let ref = Database.database().reference()
 //           ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
