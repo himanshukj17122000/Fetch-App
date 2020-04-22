@@ -15,6 +15,7 @@ class User{
     var username:String
     var email:String
     var profileImageUrl: String
+    var profileImage = UIImage()
     var Status: String
     var dogname: String
     var distance:String

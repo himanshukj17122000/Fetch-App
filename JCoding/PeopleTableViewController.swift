@@ -53,10 +53,10 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
         
     }
     
-//    @IBAction func mapView(_ sender: Any) {
-//        let mapVC = storyboard?.instantiateViewController(identifier: "MapViewController") as! MapViewController; self.navigationController?.pushViewController(mapVC, animated: true)
-//        mapVC.users = self.users
-//    }
+    @IBAction func mapView(_ sender: Any) {
+        let mapVC = storyboard?.instantiateViewController(identifier: "MapViewController") as! MapViewController; self.navigationController?.pushViewController(mapVC, animated: true)
+        mapVC.users = self.users
+    }
     func setupSearchBarController(){
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = true
@@ -82,6 +82,8 @@ class PeopleTableViewController: UITableViewController, UISearchResultsUpdating 
                     let value = snapshot.value as? NSDictionary
                     let dogsgender = value?["dogsgender"] as? String
                     let dogsprefgender = value?["prefgender"] as? String
+                    let profileImageurl = value?["profileImageUrl"] as? String
+                    _ = UIImage(contentsOfFile: profileImageurl ?? "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.akc.org%2Fexpert-advice%2Flifestyle%2F35-perfect-pictures-of-dogs%2F&psig=AOvVaw0i2Zs48r3DkOc1njLwqF3h&ust=1587596187736000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNj7hunO-ugCFQAAAAAdAAAAABAD")
                     let latt = value?["dogslat"] as? Double
                     let long = value?["dogslong"] as? Double
                     let dist = Int(value?["distance"] as! String)

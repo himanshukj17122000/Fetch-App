@@ -12,7 +12,7 @@ import MapKit
 
 class UserAnnotation: MKPointAnnotation {
     var uid: String?
-    var age: Int?
+    var dogName: String?
     var profileImage: UIImage?
-    var isMale: Bool?
+    var gender: String?
 }
