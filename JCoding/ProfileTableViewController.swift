@@ -95,13 +95,32 @@ class ProfileTableViewController: UITableViewController {
     @IBAction func savebtndidtapped(_ sender: Any) {
         changeData()
     }
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         observeData()
+        createPic()
+        
         
     
+    }
+    func createPic() {
+        Api.User.observeUsers{ (user) in
+        let currentUserID : String = (Auth.auth().currentUser?.uid)!
+        let ref = Database.database().reference()
+        ref.child("users").child(currentUserID).queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let profileImageurl = value?["profileImageUrl"] as? String
+            _ = UIImage(contentsOfFile: profileImageurl ?? "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.akc.org%2Fexpert-advice%2Flifestyle%2F35-perfect-pictures-of-dogs%2F&psig=AOvVaw0i2Zs48r3DkOc1njLwqF3h&ust=1587596187736000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNj7hunO-ugCFQAAAAAdAAAAABAD")
+            self.profilePic.loadImage(user.profileImageUrl)
+            
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+            
+    }
+        profilePic.layer.cornerRadius = 30
     }
     
 
@@ -111,12 +130,15 @@ class ProfileTableViewController: UITableViewController {
             let ref = Database.database().reference()
             ref.child("users").child(currentUserID).queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
+                let profileImageurl = value?["profileImageUrl"] as? String
+                _ = UIImage(contentsOfFile: profileImageurl ?? "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.akc.org%2Fexpert-advice%2Flifestyle%2F35-perfect-pictures-of-dogs%2F&psig=AOvVaw0i2Zs48r3DkOc1njLwqF3h&ust=1587596187736000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNj7hunO-ugCFQAAAAAdAAAAABAD")
                 self.dognamelbl.text = value?["dogname"] as? String
                 self.dogagelbl.text = value?["dogsage"] as? String
                 self.dogbreedlbl.text = value?["dogsbreed"] as? String
                 self.dogbiolbl.text = value?["dogsbio"] as? String
                 self.distancelbl.text = value?["distance"] as? String
                 self.slider.value = value?["distance"] as? Float ?? 50
+                
                 
             let gender = value?["dogsgender"] as? String
                 if gender!.elementsEqual("female") {
@@ -143,7 +165,7 @@ class ProfileTableViewController: UITableViewController {
         if !dogname!.isEmpty {
            dict["dogname"] = dogname
        }
-        dict["dogsbio"] = dogbiolbl.text
+        dict["dogsbio"] = self.dogbiolbl.text
         dict["distance"] = self.distancelbl.text
 
        let dogage = self.dogagelbl.text
@@ -154,15 +176,15 @@ class ProfileTableViewController: UITableViewController {
         if !dogbreed!.isEmpty {
            dict["dogsbreed"] = dogbreed
        }
-        if (genderfemalebtn.backgroundColor == UIColor.lightGray) {
+        if (self.genderfemalebtn.backgroundColor == UIColor.lightGray) {
             dict["dogsgender"] = "female"
         } else {
             dict["dogsgender"] = "male"
         }
         
-        if (preffemale.backgroundColor == UIColor.lightGray) {
+        if (self.preffemale.backgroundColor == UIColor.lightGray) {
             dict["prefgender"] = "female"
-        } else if (prefmale.backgroundColor == UIColor.lightGray){
+        } else if (self.prefmale.backgroundColor == UIColor.lightGray){
             dict["prefgender"] = "male"
         } else {
             dict["prefgender"] = "both"

@@ -1153,17 +1153,15 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uAs-pG-MRu">
-                                    <rect key="frame" x="167" y="34.5" width="80" height="80"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="5Y4-ZH-XVi"/>
-                                        <constraint firstAttribute="height" constant="80" id="HPC-tn-ETL"/>
-                                    </constraints>
+                                    <rect key="frame" x="90" y="10" width="234" height="129"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="uAs-pG-MRu" firstAttribute="centerX" secondItem="rYZ-Ga-p2j" secondAttribute="centerX" id="3ES-lg-wLC"/>
-                                <constraint firstItem="uAs-pG-MRu" firstAttribute="centerY" secondItem="rYZ-Ga-p2j" secondAttribute="centerY" id="p6u-lW-Q6J"/>
+                                <constraint firstAttribute="bottom" secondItem="uAs-pG-MRu" secondAttribute="bottom" constant="10" id="1f4-1I-iQU"/>
+                                <constraint firstItem="uAs-pG-MRu" firstAttribute="leading" secondItem="rYZ-Ga-p2j" secondAttribute="leading" constant="90" id="ApM-xc-PDs"/>
+                                <constraint firstAttribute="trailing" secondItem="uAs-pG-MRu" secondAttribute="trailing" constant="90" id="YAR-V9-Mgn"/>
+                                <constraint firstItem="uAs-pG-MRu" firstAttribute="top" secondItem="rYZ-Ga-p2j" secondAttribute="top" constant="10" id="uyC-ld-L3d"/>
                             </constraints>
                         </view>
                         <sections>
@@ -1802,7 +1800,7 @@
                             <fragment content="Refreshing">
                                 <attributes>
                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <font key="NSFont" metaFont="label" size="11"/>
+                                    <font key="NSFont" metaFont="message" size="11"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
