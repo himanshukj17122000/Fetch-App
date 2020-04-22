@@ -849,14 +849,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGc-Qs-Y2L">
-                                <rect key="frame" x="20" y="44" width="31" height="30"/>
+                                <rect key="frame" x="20" y="44" width="15.5" height="22"/>
                                 <state key="normal" image="close"/>
                                 <connections>
                                     <action selector="dismiss:" destination="JW9-xz-eu2" eventType="touchUpInside" id="ZsA-zD-cTb"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8YV-hL-1x3">
-                                <rect key="frame" x="20" y="114" width="354" height="40"/>
+                                <rect key="frame" x="20" y="106" width="354" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="2BK-3N-3QY"/>
                                     <constraint firstAttribute="height" constant="40" id="EPa-vA-ZzC"/>
@@ -865,7 +865,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7g-M9-NaV">
-                                <rect key="frame" x="20" y="184" width="374" height="50"/>
+                                <rect key="frame" x="20" y="176" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="d3R-B1-JtB"/>
                                 </constraints>
@@ -930,7 +930,6 @@
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9ms-S8-bUK" kind="relationship" relationship="viewControllers" id="36j-71-kOh"/>
                         <segue destination="nEW-lN-woI" kind="relationship" relationship="viewControllers" id="n2V-7E-1xm"/>
                         <segue destination="euE-HN-1Ga" kind="relationship" relationship="viewControllers" id="mjH-nc-RTQ"/>
                     </connections>
@@ -1068,7 +1067,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8K-Tk-xVg">
-                                                            <rect key="frame" x="271" y="5" width="50" height="73.5"/>
+                                                            <rect key="frame" x="296" y="5" width="25" height="73.5"/>
                                                             <state key="normal" image="play"/>
                                                         </button>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Si4-ZA-2C6">
@@ -1972,7 +1971,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSu-nq-pDG">
-                                <rect key="frame" x="20" y="56" width="58" height="34"/>
+                                <rect key="frame" x="20" y="56" width="29" height="22"/>
                                 <state key="normal" image="back">
                                     <color key="titleColor" red="0.99895316359999997" green="0.70791542529999996" blue="0.81961745019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>

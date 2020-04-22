@@ -114,6 +114,38 @@
             endingLineNumber = "29"
             landmarkName = "unknown"
             landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "98174297-FF61-4C00-836C-2E24D72817DE - 91ae8a69c88a1bea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (JCoding.Inbox) -&gt; () in JCoding.MessagesTableViewController.observeInbox() -&gt; ()"
+                  moduleName = "JCoding"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/himanshu/Desktop/ALL/union/JCoding/MessagesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "43">
+               </Location>
+               <Location
+                  uuid = "98174297-FF61-4C00-836C-2E24D72817DE - 10116e5029845168"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (JCoding.Inbox) -&gt; Swift.Bool in closure #1 (JCoding.Inbox) -&gt; () in JCoding.MessagesTableViewController.observeInbox() -&gt; ()"
+                  moduleName = "JCoding"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/himanshu/Desktop/ALL/union/JCoding/MessagesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
