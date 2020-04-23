@@ -2,6 +2,8 @@
 - [Video](https://www.youtube.com/watch?v=FzUO4GXeDh0)
 - [Sketch](https://drive.google.com/file/d/1jfHRJpVwT6Gruy72wft9Gl0Cb_Lu_FY-/view?usp=sharing)
 
+# Note: The .plist files have not been included in order to protect API keys 
+
 ## Overview
 
 - The idea is to build an application that works similar to Tinder but for dogs. All our team members love dogs and decided to build something that would be catered to the most loyal friend most people have. This mobile application allows the user to sign up using an email ID, sign in using Google and Facebook in order to make a profile for their dogs. The dog profile is then stored on the Firebase server and the preferences submitted are used to show other users. The user can then scroll through other profiles and read more about them. If the user likes it, he/she can chat with the other user using out in-built chat feature. This makes sure that the other user's number of phone number is never revealed to other people. The two users can then chat on our app and even send photos and videos.
