@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3B5901CC244EBD59006FF055 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5901CB244EBD59006FF055 /* detailViewController.swift */; };
 		793FD6E2F9395B5AF3B0E72D /* Pods_JCoding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62EB7494FE7D60D61BDEAC8 /* Pods_JCoding.framework */; };
-		A31AA3C12451C33200B6CEE7 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31AA3C02451C33200B6CEE7 /* File.swift */; };
 		A32852582435DF8100BC353F /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32852572435DF8100BC353F /* StorageService.swift */; };
 		A335D1B52437B2BC0086B683 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335D1B42437B2BC0086B683 /* User.swift */; };
 		A335D1BF2437B6E80086B683 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335D1BE2437B6E80086B683 /* Extension.swift */; };
@@ -54,7 +53,6 @@
 /* Begin PBXFileReference section */
 		3B5901CB244EBD59006FF055 /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		3C853EC15CC113197C0D6EB6 /* Pods-JCoding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCoding.release.xcconfig"; path = "Pods/Target Support Files/Pods-JCoding/Pods-JCoding.release.xcconfig"; sourceTree = "<group>"; };
-		A31AA3C02451C33200B6CEE7 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A32852572435DF8100BC353F /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		A335D1B42437B2BC0086B683 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A335D1BE2437B6E80086B683 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 				A3388D062431F960005CE11A /* Welcome.storyboard */,
 				A3365FDD243DD6820084063A /* MessageTableViewCell.swift */,
 				A3388D082431FA64005CE11A /* Main.storyboard */,
-				A31AA3C02451C33200B6CEE7 /* File.swift */,
 				3B5901CB244EBD59006FF055 /* detailViewController.swift */,
 				F32A90E02443F4BD00480D57 /* ProfileTableViewController.swift */,
 				A392222624504E35007ADC47 /* InboxTableViewCell.swift */,
@@ -376,7 +373,6 @@
 				F32A90E32444298500480D57 /* PicViewController.swift in Sources */,
 				A392222724504E35007ADC47 /* InboxTableViewCell.swift in Sources */,
 				A335D1BF2437B6E80086B683 /* Extension.swift in Sources */,
-				A31AA3C12451C33200B6CEE7 /* File.swift in Sources */,
 				A369D4C82434B1190044E2DF /* UserApi.swift in Sources */,
 				A335D1B52437B2BC0086B683 /* User.swift in Sources */,
 				A3365FDC243DCEB20084063A /* Messages.swift in Sources */,
